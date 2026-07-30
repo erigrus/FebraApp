@@ -12,6 +12,15 @@ Add your bullet under `## [Unreleased]` while developing. See
 
 ## [Unreleased]
 
+### Added
+- `docs/app-store-submission.md`: the full App Store Connect submission pack —
+  app record and category settings, German and English listing copy within
+  Apple's character limits, the "Data Not Collected" privacy answers, age-rating
+  reasoning, screenshot plan, reviewer notes and a pre-submission checklist.
+- `docs/privacy-policy.md` / `docs/privacy-policy.de.md` and `docs/support.md`,
+  ready to serve from GitHub Pages as the Privacy Policy URL and Support URL the
+  App Store requires.
+
 ### Fixed
 - Archive builds failed in "Generate symbols for Localizable.xcstrings": with
   `STRING_CATALOG_GENERATE_SYMBOLS = YES`, Xcode mints a Swift symbol per key,
