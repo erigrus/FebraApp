@@ -36,7 +36,7 @@ struct MedicationTypeFormView: View {
                     Toggle("Set a minimum interval", isOn: $hasInterval.animation())
                     if hasInterval {
                         Stepper(value: $intervalHours, in: 1...48, step: 1) {
-                            Text("Every \(Int(intervalHours)) hr")
+                            Text(MedicationType.intervalText(intervalHours))
                         }
                     }
                 } footer: {

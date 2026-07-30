@@ -32,10 +32,12 @@ struct MedicationType: Identifiable, Codable, Hashable, Sendable {
         self.defaultDosage = defaultDosage
     }
 
-    /// "every 6 hr" — the interval phrasing shared by the catalog rows, the
-    /// dose-form picker and the suggestion menu.
+    /// "Every 6 hr" — the one interval phrasing, shared by the catalog rows, the
+    /// stepper, the dose-form picker and the suggestion menu. Deliberately a
+    /// single key: two keys differing only in case ("every…"/"Every…") collide
+    /// when the string catalog derives Swift symbols.
     static func intervalText(_ hours: Double) -> String {
-        String(localized: "every \(Int(hours)) hr")
+        String(localized: "Every \(Int(hours)) hr")
     }
 
     /// Common starting points offered when the list is still empty. Intervals are
