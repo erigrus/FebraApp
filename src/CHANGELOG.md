@@ -20,6 +20,8 @@ Add your bullet under `## [Unreleased]` while developing. See
 - `docs/privacy-policy.md` / `docs/privacy-policy.de.md` and `docs/support.md`,
   ready to serve from GitHub Pages as the Privacy Policy URL and Support URL the
   App Store requires.
+- `docs/index.md` so the GitHub Pages site has a landing page linking the
+  privacy policy and support page, instead of 404ing at its root URL.
 
 ### Fixed
 - Archive builds failed in "Generate symbols for Localizable.xcstrings": with
