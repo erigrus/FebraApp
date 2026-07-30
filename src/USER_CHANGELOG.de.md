@@ -13,7 +13,7 @@ Der Abschnitt `## [Unreleased]` wird in der App nie angezeigt.
 
 ## [Unreleased]
 
-## [1.0.0] - 2026-07-29
+## [1.0.0] - 2026-07-30
 
 ### Added
 - Febra ist da: Fieber für alle in der Familie erfassen – mit Verlaufskurve,

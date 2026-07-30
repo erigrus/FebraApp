@@ -12,27 +12,7 @@ Add your bullet under `## [Unreleased]` while developing. See
 
 ## [Unreleased]
 
-### Added
-- `docs/app-store-submission.md`: the full App Store Connect submission pack —
-  app record and category settings, German and English listing copy within
-  Apple's character limits, the "Data Not Collected" privacy answers, age-rating
-  reasoning, screenshot plan, reviewer notes and a pre-submission checklist.
-- `docs/privacy-policy.md` / `docs/privacy-policy.de.md` and `docs/support.md`,
-  ready to serve from GitHub Pages as the Privacy Policy URL and Support URL the
-  App Store requires.
-- `docs/index.md` so the GitHub Pages site has a landing page linking the
-  privacy policy and support page, instead of 404ing at its root URL.
-
-### Fixed
-- Archive builds failed in "Generate symbols for Localizable.xcstrings": with
-  `STRING_CATALOG_GENERATE_SYMBOLS = YES`, Xcode mints a Swift symbol per key,
-  and three keys can't produce one — `"°C"`, `"—"` and `"%@ · %@"` contain no
-  symbol-legal characters, while `"every %lld hr"` and `"Every %lld hr"` derive
-  the same symbol. Turned symbol generation off on the app target (nothing
-  references the generated symbols) and merged the two interval keys into one
-  `MedicationType.intervalText(_:)`.
-
-## [1.0.0] - 2026-07-29
+## [1.0.0] - 2026-07-30
 
 Initial release of Febra as a **local-only** fever tracker. The app is a
 stripped-down descendant of the cloud-synced Febra: same tracking, analysis and
@@ -69,6 +49,24 @@ export, none of the backend.
   `USER_CHANGELOG.md` (English) and `USER_CHANGELOG.de.md` (German) are both
   bundled, and the one matching the app language is parsed, falling back to
   English.
+- `docs/app-store-submission.md`: the full App Store Connect submission pack —
+  app record and category settings, German and English listing copy within
+  Apple's character limits, the "Data Not Collected" privacy answers, age-rating
+  reasoning, screenshot plan, reviewer notes and a pre-submission checklist.
+- `docs/privacy-policy.md` / `docs/privacy-policy.de.md` and `docs/support.md`,
+  ready to serve from GitHub Pages as the Privacy Policy URL and Support URL the
+  App Store requires.
+- `docs/index.md` so the GitHub Pages site has a landing page linking the
+  privacy policy and support page, instead of 404ing at its root URL.
+
+### Fixed
+- Archive builds failed in "Generate symbols for Localizable.xcstrings": with
+  `STRING_CATALOG_GENERATE_SYMBOLS = YES`, Xcode mints a Swift symbol per key,
+  and three keys can't produce one — `"°C"`, `"—"` and `"%@ · %@"` contain no
+  symbol-legal characters, while `"every %lld hr"` and `"Every %lld hr"` derive
+  the same symbol. Turned symbol generation off on the app target (nothing
+  references the generated symbols) and merged the two interval keys into one
+  `MedicationType.intervalText(_:)`.
 
 ### Removed
 - Firebase Auth, Firestore and Cloud Messaging, along with sign-in, family
