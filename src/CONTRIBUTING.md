@@ -39,9 +39,18 @@ you usually don't have to touch `project.pbxproj`.
 │   ├── USER_CHANGELOG.md       # curated user-facing "What's new" (English)
 │   ├── USER_CHANGELOG.de.md    # its German translation
 │   └── version.txt             # current released version
-└── docs/
-    └── family-fever-tracker-requirements.md   # product spec
+└── docs/                       # also served by GitHub Pages
+    ├── family-fever-tracker-requirements.md   # product spec
+    ├── app-store-submission.md               # App Store Connect submission pack
+    ├── privacy-policy.md / privacy-policy.de.md
+    ├── support.md
+    └── index.md                              # Pages landing page
 ```
+
+`docs/` is published with GitHub Pages (Settings → Pages → `main`, `/docs`), which
+is where the App Store's required Privacy Policy and Support URLs point. Keep the
+Jekyll front matter (`---\ntitle: …\n---`) at the top of any page that must render
+there.
 
 ## Workflow
 
