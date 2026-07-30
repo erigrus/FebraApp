@@ -1,0 +1,1265 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "%@ · %@": {
+      "extractionState": "manual",
+      "shouldTranslate": false
+    },
+    "%lld doses": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld Gaben"
+          }
+        }
+      }
+    },
+    "%lld hr": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld Std."
+          }
+        }
+      }
+    },
+    "%lld hr %lld min": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld Std. %lld Min."
+          }
+        }
+      }
+    },
+    "%lld min": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld Min."
+          }
+        }
+      }
+    },
+    "1 dose": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 Gabe"
+          }
+        }
+      }
+    },
+    "24 h": {
+      "extractionState": "manual",
+      "shouldTranslate": false
+    },
+    "30 days": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "30 Tage"
+          }
+        }
+      }
+    },
+    "38.0": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "38,0"
+          }
+        }
+      }
+    },
+    "7 days": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "7 Tage"
+          }
+        }
+      }
+    },
+    "About": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Info"
+          }
+        }
+      }
+    },
+    "Actions": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aktionen"
+          }
+        }
+      }
+    },
+    "Add a family member first to start recording temperatures.": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lege zuerst ein Familienmitglied an, um Temperaturen zu erfassen."
+          }
+        }
+      }
+    },
+    "Add medication": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Medikament hinzufügen"
+          }
+        }
+      }
+    },
+    "Add member": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mitglied hinzufügen"
+          }
+        }
+      }
+    },
+    "Add temperature": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Temperatur erfassen"
+          }
+        }
+      }
+    },
+    "Add the medications you use often, together with their minimum interval. You can then pick them directly when logging a dose.": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lege häufig genutzte Medikamente mit ihrem Mindestabstand an. Beim Erfassen einer Gabe kannst du sie dann direkt auswählen."
+          }
+        }
+      }
+    },
+    "All": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle"
+          }
+        }
+      }
+    },
+    "Cancel": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abbrechen"
+          }
+        }
+      }
+    },
+    "Changed": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geändert"
+          }
+        }
+      }
+    },
+    "Choose": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auswählen"
+          }
+        }
+      }
+    },
+    "Color": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Farbe"
+          }
+        }
+      }
+    },
+    "Created with Febra on %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erstellt mit Febra am %@"
+          }
+        }
+      }
+    },
+    "Date of birth": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geburtsdatum"
+          }
+        }
+      }
+    },
+    "Default dosage (optional)": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standard-Dosierung (optional)"
+          }
+        }
+      }
+    },
+    "Default dosage e.g. “250 mg” or “5 ml” — prefilled when logging a dose.": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standard-Dosierung z. B. „250 mg“ oder „5 ml“ – wird beim Erfassen vorausgefüllt."
+          }
+        }
+      }
+    },
+    "Delete": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Löschen"
+          }
+        }
+      }
+    },
+    "Delete member": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mitglied löschen"
+          }
+        }
+      }
+    },
+    "Delete “%@” and all of their readings and medications?": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "„%@“ und alle zugehörigen Messungen und Medikamente löschen?"
+          }
+        }
+      }
+    },
+    "Done": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fertig"
+          }
+        }
+      }
+    },
+    "Dosage": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dosierung"
+          }
+        }
+      }
+    },
+    "Dosage e.g. “5 ml” or “250 mg”": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dosierung z. B. „5 ml“ oder „250 mg“"
+          }
+        }
+      }
+    },
+    "Edit": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bearbeiten"
+          }
+        }
+      }
+    },
+    "Edit medication": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Medikament bearbeiten"
+          }
+        }
+      }
+    },
+    "Edit member": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mitglied bearbeiten"
+          }
+        }
+      }
+    },
+    "Edit temperature": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Temperatur bearbeiten"
+          }
+        }
+      }
+    },
+    "Elevated": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erhöht"
+          }
+        }
+      }
+    },
+    "Elevated from %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erhöht ab %@"
+          }
+        }
+      }
+    },
+    "Entries": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einträge"
+          }
+        }
+      }
+    },
+    "Every %lld hr": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle %lld Std."
+          }
+        }
+      }
+    },
+    "Everything stays on this device": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle Daten bleiben auf diesem Gerät"
+          }
+        }
+      }
+    },
+    "Export as PDF": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Export als PDF"
+          }
+        }
+      }
+    },
+    "Falling": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fallend"
+          }
+        }
+      }
+    },
+    "Febra has no account and no server, and never sends your data anywhere. It is stored in the app only, and is included in your own device backup.": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Febra hat kein Konto und keinen Server und sendet deine Daten nirgendwohin. Sie liegen nur in der App und sind in deiner eigenen Gerätesicherung enthalten."
+          }
+        }
+      }
+    },
+    "Febra is no substitute for medical advice. With a high or persistent fever, please consult a doctor.": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Febra ersetzt keine ärztliche Beratung. Bei hohem oder anhaltendem Fieber bitte ärztlichen Rat einholen."
+          }
+        }
+      }
+    },
+    "Fever": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fieber"
+          }
+        }
+      }
+    },
+    "Fever episode": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fieber-Episode"
+          }
+        }
+      }
+    },
+    "Fever episode · %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fieber-Episode · %@"
+          }
+        }
+      }
+    },
+    "Fever episodes": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fieber-Episoden"
+          }
+        }
+      }
+    },
+    "Fever from %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fieber ab %@"
+          }
+        }
+      }
+    },
+    "Fever — in infants under 3 months, seek medical advice immediately.": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fieber — bei Säuglingen unter 3 Monaten sofort ärztlich abklären."
+          }
+        }
+      }
+    },
+    "Fixed": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Behoben"
+          }
+        }
+      }
+    },
+    "From list": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aus Liste"
+          }
+        }
+      }
+    },
+    "General": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allgemein"
+          }
+        }
+      }
+    },
+    "History · %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verlauf · %@"
+          }
+        }
+      }
+    },
+    "Language": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sprache"
+          }
+        }
+      }
+    },
+    "Log medication": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Medikament erfassen"
+          }
+        }
+      }
+    },
+    "Medication": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Medikament"
+          }
+        }
+      }
+    },
+    "Medication deleted": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Medikament gelöscht"
+          }
+        }
+      }
+    },
+    "Medications": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Medikamentenliste"
+          }
+        }
+      }
+    },
+    "Member": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mitglied"
+          }
+        }
+      }
+    },
+    "Member not found": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mitglied nicht gefunden"
+          }
+        }
+      }
+    },
+    "Minimum interval %lld hr — “next dose” is shown on the member screen. Dosage e.g. “5 ml”.": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mindestabstand %lld Std. – „nächste Gabe“ wird auf der Mitgliedsseite angezeigt. Dosierung z. B. „5 ml“."
+          }
+        }
+      }
+    },
+    "Minimum interval between two doses. It drives the “next dose possible in…” countdown — a reminder, not a medical dosing recommendation.": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mindestabstand zwischen zwei Gaben. Daraus wird „nächste Gabe möglich in …“ berechnet – ein Richtwert, keine ärztliche Dosierempfehlung."
+          }
+        }
+      }
+    },
+    "Name": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name"
+          }
+        }
+      }
+    },
+    "New": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neu"
+          }
+        }
+      }
+    },
+    "New medication…": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neues Medikament …"
+          }
+        }
+      }
+    },
+    "Next dose": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nächste Gabe"
+          }
+        }
+      }
+    },
+    "No entries yet.": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noch keine Einträge."
+          }
+        }
+      }
+    },
+    "No family members": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Familienmitglieder"
+          }
+        }
+      }
+    },
+    "No medications": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Medikamente"
+          }
+        }
+      }
+    },
+    "No readings": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Messungen"
+          }
+        }
+      }
+    },
+    "No readings in the selected period.": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Im gewählten Zeitraum gibt es keine Messungen."
+          }
+        }
+      }
+    },
+    "No readings yet": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noch keine Messung"
+          }
+        }
+      }
+    },
+    "Normal": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Normal"
+          }
+        }
+      }
+    },
+    "Note": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notiz"
+          }
+        }
+      }
+    },
+    "Note (optional)": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notiz (optional)"
+          }
+        }
+      }
+    },
+    "Nothing new": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Neuigkeiten"
+          }
+        }
+      }
+    },
+    "Overview": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Übersicht"
+          }
+        }
+      }
+    },
+    "Peak": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Höchstwert"
+          }
+        }
+      }
+    },
+    "Period": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeitraum"
+          }
+        }
+      }
+    },
+    "Please enter a value between %@ and %@.": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bitte einen Wert zwischen %@ und %@ eingeben."
+          }
+        }
+      }
+    },
+    "Possible now": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jetzt möglich"
+          }
+        }
+      }
+    },
+    "Press and hold a row to edit or delete an entry.": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eintrag bearbeiten oder löschen: Zeile gedrückt halten."
+          }
+        }
+      }
+    },
+    "Reading deleted": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Messung gelöscht"
+          }
+        }
+      }
+    },
+    "Recently used": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zuletzt verwendet"
+          }
+        }
+      }
+    },
+    "Removed": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Entfernt"
+          }
+        }
+      }
+    },
+    "Rising": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Steigend"
+          }
+        }
+      }
+    },
+    "Save": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sichern"
+          }
+        }
+      }
+    },
+    "Seek medical advice now": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sofort ärztlich abklären"
+          }
+        }
+      }
+    },
+    "Series": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Serie"
+          }
+        }
+      }
+    },
+    "Set a minimum interval": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mindestabstand festlegen"
+          }
+        }
+      }
+    },
+    "Set date of birth": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geburtsdatum angeben"
+          }
+        }
+      }
+    },
+    "Settings": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einstellungen"
+          }
+        }
+      }
+    },
+    "Steady": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gleichbleibend"
+          }
+        }
+      }
+    },
+    "System": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "System"
+          }
+        }
+      }
+    },
+    "Temperature": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Temperatur"
+          }
+        }
+      }
+    },
+    "The forecast is a rough extrapolation of the most recent readings — not a medical prediction.": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Prognose ist eine grobe Hochrechnung der letzten Messungen – keine medizinische Vorhersage."
+          }
+        }
+      }
+    },
+    "The minimum interval is a reminder you set yourself for the “next dose” — not a medical dosing recommendation.": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Der Mindestabstand ist ein einstellbarer Richtwert für die „nächste Gabe“ – keine ärztliche Dosierempfehlung."
+          }
+        }
+      }
+    },
+    "The minimum interval is a reminder, not a medical dosing recommendation.": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mindestabstand als Erinnerung – keine ärztliche Dosierempfehlung."
+          }
+        }
+      }
+    },
+    "There are no release notes yet.": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Es liegen noch keine Versionshinweise vor."
+          }
+        }
+      }
+    },
+    "Time": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeit"
+          }
+        }
+      }
+    },
+    "Undo": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rückgängig"
+          }
+        }
+      }
+    },
+    "Use a suggestion": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vorschlag übernehmen"
+          }
+        }
+      }
+    },
+    "Version": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Version"
+          }
+        }
+      }
+    },
+    "Version %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Version %@"
+          }
+        }
+      }
+    },
+    "What's new": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Was ist neu"
+          }
+        }
+      }
+    },
+    "e.g. “after paracetamol” or “left ear”": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "z. B. „nach Paracetamol“ oder „linkes Ohr“"
+          }
+        }
+      }
+    },
+    "every %lld hr": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "alle %lld Std."
+          }
+        }
+      }
+    },
+    "in %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "in %@"
+          }
+        }
+      }
+    },
+    "no minimum interval": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kein Mindestabstand"
+          }
+        }
+      }
+    },
+    "over %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "über %@"
+          }
+        }
+      }
+    },
+    "since %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "seit %@"
+          }
+        }
+      }
+    },
+    "today, %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "heute, %@"
+          }
+        }
+      }
+    },
+    "yesterday, %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "gestern, %@"
+          }
+        }
+      }
+    },
+    "°C": {
+      "extractionState": "manual",
+      "shouldTranslate": false
+    },
+    "—": {
+      "extractionState": "manual",
+      "shouldTranslate": false
+    }
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,573 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FB4653A0000000000000B002 /* USER_CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = FB4653A0000000000000B001 /* USER_CHANGELOG.md */; };
+		FB4653A0000000000000B004 /* USER_CHANGELOG.de.md in Resources */ = {isa = PBXBuildFile; fileRef = FB4653A0000000000000B003 /* USER_CHANGELOG.de.md */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1ED2D3122FF6339300657C24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ED2D2FC2FF6339100657C24 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1ED2D3032FF6339100657C24;
+			remoteInfo = Febra;
+		};
+		1ED2D31C2FF6339300657C24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ED2D2FC2FF6339100657C24 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1ED2D3032FF6339100657C24;
+			remoteInfo = Febra;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1ED2D3042FF6339100657C24 /* Febra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Febra.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1ED2D3112FF6339300657C24 /* FebraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FebraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1ED2D31B2FF6339300657C24 /* FebraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FebraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB4653A0000000000000B001 /* USER_CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = USER_CHANGELOG.md; sourceTree = SOURCE_ROOT; };
+		FB4653A0000000000000B003 /* USER_CHANGELOG.de.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = USER_CHANGELOG.de.md; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		1ED2D3062FF6339100657C24 /* Febra */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Febra;
+			sourceTree = "<group>";
+		};
+		1ED2D3142FF6339300657C24 /* FebraTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = FebraTests;
+			sourceTree = "<group>";
+		};
+		1ED2D31E2FF6339300657C24 /* FebraUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = FebraUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1ED2D3012FF6339100657C24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+		1ED2D30E2FF6339300657C24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+		1ED2D3182FF6339300657C24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1ED2D2FB2FF6339100657C24 = {
+			isa = PBXGroup;
+			children = (
+				FB4653A0000000000000B001 /* USER_CHANGELOG.md */,
+				FB4653A0000000000000B003 /* USER_CHANGELOG.de.md */,
+				1ED2D3062FF6339100657C24 /* Febra */,
+				1ED2D3142FF6339300657C24 /* FebraTests */,
+				1ED2D31E2FF6339300657C24 /* FebraUITests */,
+				1ED2D3052FF6339100657C24 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1ED2D3052FF6339100657C24 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1ED2D3042FF6339100657C24 /* Febra.app */,
+				1ED2D3112FF6339300657C24 /* FebraTests.xctest */,
+				1ED2D31B2FF6339300657C24 /* FebraUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1ED2D3032FF6339100657C24 /* Febra */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1ED2D3232FF6339300657C24 /* Build configuration list for PBXNativeTarget "Febra" */;
+			buildPhases = (
+				1ED2D3002FF6339100657C24 /* Sources */,
+				1ED2D3012FF6339100657C24 /* Frameworks */,
+				1ED2D3022FF6339100657C24 /* Resources */,
+			);
+			buildRules = (
+			);
+			fileSystemSynchronizedGroups = (
+				1ED2D3062FF6339100657C24 /* Febra */,
+			);
+			name = Febra;
+			productName = Febra;
+			productReference = 1ED2D3042FF6339100657C24 /* Febra.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1ED2D3102FF6339300657C24 /* FebraTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1ED2D3262FF6339300657C24 /* Build configuration list for PBXNativeTarget "FebraTests" */;
+			buildPhases = (
+				1ED2D30D2FF6339300657C24 /* Sources */,
+				1ED2D30E2FF6339300657C24 /* Frameworks */,
+				1ED2D30F2FF6339300657C24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1ED2D3132FF6339300657C24 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1ED2D3142FF6339300657C24 /* FebraTests */,
+			);
+			name = FebraTests;
+			productName = FebraTests;
+			productReference = 1ED2D3112FF6339300657C24 /* FebraTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1ED2D31A2FF6339300657C24 /* FebraUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1ED2D3292FF6339300657C24 /* Build configuration list for PBXNativeTarget "FebraUITests" */;
+			buildPhases = (
+				1ED2D3172FF6339300657C24 /* Sources */,
+				1ED2D3182FF6339300657C24 /* Frameworks */,
+				1ED2D3192FF6339300657C24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1ED2D31D2FF6339300657C24 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1ED2D31E2FF6339300657C24 /* FebraUITests */,
+			);
+			name = FebraUITests;
+			productName = FebraUITests;
+			productReference = 1ED2D31B2FF6339300657C24 /* FebraUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1ED2D2FC2FF6339100657C24 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2700;
+				LastUpgradeCheck = 2700;
+				TargetAttributes = {
+					1ED2D3032FF6339100657C24 = {
+						CreatedOnToolsVersion = 27.0;
+					};
+					1ED2D3102FF6339300657C24 = {
+						CreatedOnToolsVersion = 27.0;
+						TestTargetID = 1ED2D3032FF6339100657C24;
+					};
+					1ED2D31A2FF6339300657C24 = {
+						CreatedOnToolsVersion = 27.0;
+						TestTargetID = 1ED2D3032FF6339100657C24;
+					};
+				};
+			};
+			buildConfigurationList = 1ED2D2FF2FF6339100657C24 /* Build configuration list for PBXProject "Febra" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				de,
+			);
+			mainGroup = 1ED2D2FB2FF6339100657C24;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 1ED2D3052FF6339100657C24 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1ED2D3032FF6339100657C24 /* Febra */,
+				1ED2D3102FF6339300657C24 /* FebraTests */,
+				1ED2D31A2FF6339300657C24 /* FebraUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1ED2D3022FF6339100657C24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+				FB4653A0000000000000B002 /* USER_CHANGELOG.md in Resources */,
+				FB4653A0000000000000B004 /* USER_CHANGELOG.de.md in Resources */,
+			);
+		};
+		1ED2D30F2FF6339300657C24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+		1ED2D3192FF6339300657C24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1ED2D3002FF6339100657C24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+		1ED2D30D2FF6339300657C24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+		1ED2D3172FF6339300657C24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1ED2D3132FF6339300657C24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1ED2D3032FF6339100657C24 /* Febra */;
+			targetProxy = 1ED2D3122FF6339300657C24 /* PBXContainerItemProxy */;
+		};
+		1ED2D31D2FF6339300657C24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1ED2D3032FF6339100657C24 /* Febra */;
+			targetProxy = 1ED2D31C2FF6339300657C24 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1ED2D3212FF6339300657C24 /* Debug configuration for PBXProject "Febra" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = X2QJU2LNJP;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1ED2D3222FF6339300657C24 /* Release configuration for PBXProject "Febra" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = X2QJU2LNJP;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1ED2D3242FF6339300657C24 /* Debug configuration for PBXNativeTarget "Febra" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X2QJU2LNJP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Febra;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.erigrus.FebraLocal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1ED2D3252FF6339300657C24 /* Release configuration for PBXNativeTarget "Febra" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X2QJU2LNJP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Febra;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.erigrus.FebraLocal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1ED2D3272FF6339300657C24 /* Debug configuration for PBXNativeTarget "FebraTests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X2QJU2LNJP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.erigrus.FebraLocalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Febra.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Febra";
+			};
+			name = Debug;
+		};
+		1ED2D3282FF6339300657C24 /* Release configuration for PBXNativeTarget "FebraTests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X2QJU2LNJP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.erigrus.FebraLocalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Febra.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Febra";
+			};
+			name = Release;
+		};
+		1ED2D32A2FF6339300657C24 /* Debug configuration for PBXNativeTarget "FebraUITests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X2QJU2LNJP;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.erigrus.FebraLocalUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Febra;
+			};
+			name = Debug;
+		};
+		1ED2D32B2FF6339300657C24 /* Release configuration for PBXNativeTarget "FebraUITests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X2QJU2LNJP;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.erigrus.FebraLocalUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Febra;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1ED2D2FF2FF6339100657C24 /* Build configuration list for PBXProject "Febra" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1ED2D3212FF6339300657C24 /* Debug configuration for PBXProject "Febra" */,
+				1ED2D3222FF6339300657C24 /* Release configuration for PBXProject "Febra" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		1ED2D3232FF6339300657C24 /* Build configuration list for PBXNativeTarget "Febra" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1ED2D3242FF6339300657C24 /* Debug configuration for PBXNativeTarget "Febra" */,
+				1ED2D3252FF6339300657C24 /* Release configuration for PBXNativeTarget "Febra" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		1ED2D3262FF6339300657C24 /* Build configuration list for PBXNativeTarget "FebraTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1ED2D3272FF6339300657C24 /* Debug configuration for PBXNativeTarget "FebraTests" */,
+				1ED2D3282FF6339300657C24 /* Release configuration for PBXNativeTarget "FebraTests" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		1ED2D3292FF6339300657C24 /* Build configuration list for PBXNativeTarget "FebraUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1ED2D32A2FF6339300657C24 /* Debug configuration for PBXNativeTarget "FebraUITests" */,
+				1ED2D32B2FF6339300657C24 /* Release configuration for PBXNativeTarget "FebraUITests" */,
+			);
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = 1ED2D2FC2FF6339100657C24 /* Project object */;
+	validationLevel = 1;
+}

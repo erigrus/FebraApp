@@ -60,3 +60,22 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+
+# Shared schemes are intentionally NOT ignored — keep them under
+# <project>.xcodeproj/xcshareddata/xcschemes/ committed so CI can use them.
+
+# Editor / tooling
+.idea/
+.vscode/
+.claude/*
+!.claude/skills/
+*.swp
+*.swo
+
+# Secrets — never commit these
+.env
+.env.*
+!.env.example
+*.p12
+*.mobileprovision
+*.cer

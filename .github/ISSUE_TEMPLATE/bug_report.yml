@@ -1,0 +1,32 @@
+name: Bug report
+description: Something broken in Febra
+labels: [bug]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe the bug. Include steps to reproduce.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device / iOS version
+      placeholder: iPhone 17 Pro, iOS 27.0
+  - type: input
+    id: app-version
+    attributes:
+      label: Febra version
+      placeholder: "1.0.0"
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / console output
+      render: shell
