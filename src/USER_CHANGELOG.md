@@ -16,7 +16,7 @@ a released build, so `## [Unreleased]` is never shown in the app.
 
 ## [Unreleased]
 
-## [1.0.0] - 2026-07-29
+## [1.0.0] - 2026-07-30
 
 ### Added
 - Febra is here: track fever for everyone in the family — with a history chart,
