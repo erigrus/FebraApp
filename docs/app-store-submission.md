@@ -12,6 +12,26 @@ Related files: [privacy-policy.md](privacy-policy.md) (English),
 [privacy-policy.de.md](privacy-policy.de.md) (German),
 [support.md](support.md).
 
+## URLs at a glance
+
+Every URL App Store Connect asks for. All of them are live pages on erigrus.de,
+maintained in the [erigrus-website](https://github.com/erigrus/erigrus-website)
+repo under `febra/` (German) and `febra/en/` (English).
+
+| Field | German localization (primary) | English (U.S.) localization |
+|---|---|---|
+| Privacy Policy URL | `https://erigrus.de/febra/privacy/` | `https://erigrus.de/febra/en/privacy/` |
+| Support URL | `https://erigrus.de/febra/support/` | `https://erigrus.de/febra/en/support/` |
+| Marketing URL | `https://erigrus.de/febra/` | `https://erigrus.de/febra/en/` |
+
+Privacy Choices URL: leave empty (nothing is collected, so there is nothing to
+opt out of).
+
+**Contact address.** The erigrus.de pages give `info@erigrus.de`, matching the
+rest of that site and its Impressum; the drafts here give
+`erik.gruschka@mailbox.org`. Pick one for the public pages if you want them
+identical — the store forms themselves don't ask for an address.
+
 ---
 
 ## 1. App record
@@ -74,13 +94,17 @@ tracking, no data types, no third-party partners.
 
 | Field | Value |
 |---|---|
-| Privacy Policy URL | `https://erigrus.github.io/FebraApp/privacy-policy` |
+| Privacy Policy URL (German localization) | `https://erigrus.de/febra/privacy/` |
+| Privacy Policy URL (English localization) | `https://erigrus.de/febra/en/privacy/` |
 | Privacy Choices URL | *(leave empty)* |
 
-**Required setup:** the URL must be publicly reachable before submission. Enable
-GitHub Pages on this repo (Settings → Pages → Source: `main`, folder `/docs`).
-If the repo is private, Pages needs a public repo or a paid plan — otherwise
-host the two policy files anywhere public and use that URL instead.
+Both URLs are live pages on erigrus.de, mirroring
+[privacy-policy.de.md](privacy-policy.de.md) and
+[privacy-policy.md](privacy-policy.md). They are maintained in the
+[erigrus-website](https://github.com/erigrus/erigrus-website) repo under
+`febra/privacy/` and `febra/en/privacy/` — when a policy changes here, update
+that repo in the same pass. The `erigrus.github.io/FebraApp/…` Pages copies stay
+as the developer-facing drafts; the store listing points at erigrus.de.
 
 ## 5. Store listing — German (primary)
 
@@ -131,8 +155,8 @@ Febra ersetzt keine ärztliche Beratung. Bei hohem oder anhaltendem Fieber bitte
 **What's New** (4000 max) — first version, so this field is unused; from 1.1.0
 on, paste the matching section of `src/USER_CHANGELOG.de.md`.
 
-**Support URL:** `https://erigrus.github.io/FebraApp/support`
-**Marketing URL:** *(leave empty)*
+**Support URL:** `https://erigrus.de/febra/support/`
+**Marketing URL:** `https://erigrus.de/febra/`
 **Copyright:** `2026 Erik Gruschka`
 
 ## 6. Store listing — English (U.S.)
@@ -176,7 +200,8 @@ Febra follows your device language and can be switched per app in iOS Settings.
 Febra is no substitute for medical advice. With a high or persistent fever, please consult a doctor.
 ```
 
-**Support URL:** `https://erigrus.github.io/FebraApp/support`
+**Support URL:** `https://erigrus.de/febra/en/support/`
+**Marketing URL:** `https://erigrus.de/febra/en/`
 **Copyright:** `2026 Erik Gruschka`
 
 ## 7. Screenshots
@@ -255,7 +280,7 @@ goes live).
 
 - [ ] Old app renamed to *Febra Connect* in App Store Connect
 - [ ] New app record created: name `Febra`, bundle ID `com.erigrus.FebraLocal`
-- [ ] GitHub Pages enabled; privacy policy and support URLs load publicly
+- [ ] `erigrus.de/febra/` pages live: app, privacy and support in DE and EN
 - [ ] Xcode Cloud workflow green; build 1.0.0 (n) visible in TestFlight
 - [ ] Smoke test on a device in both languages
 - [ ] iPad decision made (screenshots produced, or device family set to iPhone)

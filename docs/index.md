@@ -16,5 +16,13 @@ analytics — the app makes no network requests at all.
 - [Privacy policy](privacy-policy) · [Datenschutzerklärung](privacy-policy.de)
 - [Support](support)
 
+The **public** pages the App Store listing points at live on erigrus.de:
+[erigrus.de/febra/](https://erigrus.de/febra/) (German) ·
+[erigrus.de/febra/en/](https://erigrus.de/febra/en/) (English), each with its own
+privacy and support page. The pages here are the source drafts — change them
+first, then mirror the change into the
+[erigrus-website](https://github.com/erigrus/erigrus-website) repo under `febra/`
+and `febra/en/`.
+
 Febra is no substitute for medical advice. With a high or persistent fever,
 please consult a doctor.
