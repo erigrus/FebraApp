@@ -37,7 +37,7 @@ No configuration, no keys, no packages to resolve.
 | `src/Febra/Localizable.xcstrings` | String catalog (English source, German translation) |
 | `src/CHANGELOG.md` | Technical changelog |
 | `src/USER_CHANGELOG.md` | User-facing "What's new" (bundled; `.de.md` is the German one) |
-| `docs/` | Product spec |
+| `docs/` | Product spec, App Store submission pack, privacy policy, support page |
 
 See [src/CONTRIBUTING.md](src/CONTRIBUTING.md) for the development workflow and
 [src/CLAUDE.md](src/CLAUDE.md) for architecture notes.
