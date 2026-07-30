@@ -12,6 +12,15 @@ Add your bullet under `## [Unreleased]` while developing. See
 
 ## [Unreleased]
 
+### Fixed
+- Archive builds failed in "Generate symbols for Localizable.xcstrings": with
+  `STRING_CATALOG_GENERATE_SYMBOLS = YES`, Xcode mints a Swift symbol per key,
+  and three keys can't produce one — `"°C"`, `"—"` and `"%@ · %@"` contain no
+  symbol-legal characters, while `"every %lld hr"` and `"Every %lld hr"` derive
+  the same symbol. Turned symbol generation off on the app target (nothing
+  references the generated symbols) and merged the two interval keys into one
+  `MedicationType.intervalText(_:)`.
+
 ## [1.0.0] - 2026-07-29
 
 Initial release of Febra as a **local-only** fever tracker. The app is a

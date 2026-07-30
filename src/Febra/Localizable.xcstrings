@@ -1175,17 +1175,6 @@
         }
       }
     },
-    "every %lld hr": {
-      "extractionState": "manual",
-      "localizations": {
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "alle %lld Std."
-          }
-        }
-      }
-    },
     "in %@": {
       "extractionState": "manual",
       "localizations": {
