@@ -26,37 +26,37 @@ struct AddMedicationView: View {
         NavigationStack {
             Form {
                 Section {
-                    Picker("Mitglied", selection: $memberID) {
+                    Picker("Member", selection: $memberID) {
                         ForEach(store.members) { member in
                             Text(member.name).tag(member.id as UUID?)
                         }
                     }
 
                     HStack {
-                        TextField("Medikament", text: $name)
+                        TextField("Medication", text: $name)
                         medicationMenu
                     }
 
-                    TextField("Dosierung", text: $dosage)
+                    TextField("Dosage", text: $dosage)
 
-                    DatePicker("Zeitpunkt", selection: $timestamp, in: ...Date.now)
+                    DatePicker("Time", selection: $timestamp, in: ...Date.now)
                 } footer: {
                     Text(footerText)
                 }
 
                 Section {
-                    TextField("Notiz (optional)", text: $note, axis: .vertical)
+                    TextField("Note (optional)", text: $note, axis: .vertical)
                         .lineLimit(1...3)
                 }
             }
-            .navigationTitle("Medikament erfassen")
+            .navigationTitle("Log medication")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Abbrechen") { dismiss() }
+                    Button("Cancel") { dismiss() }
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Sichern", action: save)
+                    Button("Save", action: save)
                         .disabled(!isValid)
                 }
             }
@@ -78,7 +78,7 @@ struct AddMedicationView: View {
     private var medicationMenu: some View {
         Menu {
             if !store.sortedMedicationTypes.isEmpty {
-                Section("Aus Liste") {
+                Section("From list") {
                     ForEach(store.sortedMedicationTypes) { type in
                         Button {
                             apply(type)
@@ -90,7 +90,7 @@ struct AddMedicationView: View {
             }
             let recents = store.recentMedicationNames.prefix(5)
             if !recents.isEmpty {
-                Section("Zuletzt verwendet") {
+                Section("Recently used") {
                     ForEach(recents, id: \.self) { recent in
                         Button(recent) { name = recent }
                     }
@@ -99,25 +99,25 @@ struct AddMedicationView: View {
             Button {
                 showsNewType = true
             } label: {
-                Label("Neues Medikament …", systemImage: "plus")
+                Label("New medication…", systemImage: "plus")
             }
         } label: {
-            Label("Auswählen", systemImage: "list.bullet")
+            Label("Choose", systemImage: "list.bullet")
                 .labelStyle(.iconOnly)
         }
     }
 
     private func menuLabel(for type: MedicationType) -> String {
         guard let hours = type.intervalHours else { return type.name }
-        return "\(type.name) · alle \(Int(hours)) Std."
+        return "\(type.name) · \(MedicationType.intervalText(hours))"
     }
 
     /// The interval note shown once the typed name matches a catalogued medication.
     private var footerText: String {
         if let hours = store.medicationType(named: name)?.intervalHours {
-            return "Mindestabstand \(Int(hours)) Std. – „nächste Gabe“ wird auf der Mitgliedsseite angezeigt. Dosierung z. B. „5 ml“."
+            return String(localized: "Minimum interval \(Int(hours)) hr — “next dose” is shown on the member screen. Dosage e.g. “5 ml”.")
         }
-        return "Dosierung z. B. „5 ml“ oder „250 mg“"
+        return String(localized: "Dosage e.g. “5 ml” or “250 mg”")
     }
 
     private func apply(_ type: MedicationType) {

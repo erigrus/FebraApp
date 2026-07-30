@@ -32,10 +32,23 @@ export, none of the backend.
   dependent fever thresholds, linear-regression trend with a labeled short-term
   forecast, and fever-episode summaries.
 - Medication logging with timeline markers, a medication list with minimum
-  dosing intervals, and the derived "Nächste Gabe" countdown.
+  dosing intervals, and the derived "next dose" countdown.
 - PDF export of a member's history (chart + table) for a doctor visit, for both
   the selected range and a single fever episode.
-- In-app "Was ist neu" screen rendered from the bundled `USER_CHANGELOG.md`.
+- Settings screen, reached from a gear button in the dashboard toolbar: the
+  medication list, a link to iOS's per-app language setting, "What's new", the
+  version/build number, the medical disclaimer and a statement that all data
+  stays on the device. The dashboard's overflow menu is gone — its two entries
+  moved here.
+- Full English and German localization. English is the development language and
+  the source of every string; German is a complete translation in the
+  `Localizable.xcstrings` string catalog. Dates and numbers follow the device
+  locale (nothing is pinned to `de_DE` any more), and the app can be switched
+  per app in iOS Settings.
+- In-app "What's new" screen rendered from the bundled changelog:
+  `USER_CHANGELOG.md` (English) and `USER_CHANGELOG.de.md` (German) are both
+  bundled, and the one matching the app language is parsed, falling back to
+  English.
 
 ### Removed
 - Firebase Auth, Firestore and Cloud Messaging, along with sign-in, family

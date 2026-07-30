@@ -23,7 +23,8 @@ correctable timestamp and note (§2.2/§2.3), local persistence (§2.4), the
 dashboard and history graph with age-dependent fever thresholds, trend and a
 labeled forecast (§2.5, §5), fever-episode summaries (§2.5), medication logging
 with timeline markers plus the medication list and "next dose" guidance (§2.6),
-PDF export for doctor visits (§6.10) and the in-app "Was ist neu" screen.
+PDF export for doctor visits (§6.10), the settings screen (§2.8) and the in-app
+"What's new" screen. The UI ships in English and German (§3).
 
 ---
 
@@ -111,11 +112,30 @@ Out of scope. There is no server to evaluate readings and no second device to
 notify. Local reminders may be reconsidered later, but only as an on-device
 feature.
 
+### 2.8 Settings
+One settings screen, reached from a gear button in the dashboard toolbar. It
+holds everything that is not a per-member action:
+- **Medications** — the medication list (§2.6).
+- **Language** — deep-links to iOS Settings for this app, where the system's
+  per-app language switch lives (available because the app ships more than one
+  localization). Febra deliberately keeps no language override of its own.
+- **What's new** — the in-app changelog.
+- **Version** — marketing version and build number.
+- **About** — the medical disclaimer and a plain statement that all data stays
+  on the device.
+
 ---
 
 ## 3. Non-Functional Requirements
-- **App language: German.** The app UI is German-only (no localization layer);
-  this affects UI copy, date/number formatting (German locale) and terminology.
+- **App languages: English and German.** English is the development language
+  and the source of every string; German is a full translation. UI copy lives in
+  the `Localizable.xcstrings` string catalog — no literal in code may be
+  German — and dates/numbers follow the device locale (nothing is pinned). The
+  user-facing release notes are prose, not UI strings, so they live in one
+  markdown file per language (`USER_CHANGELOG.md` English,
+  `USER_CHANGELOG.de.md` German), both bundled and picked by app language.
+  Adding a third language means adding a column to the catalog plus one more
+  changelog file — no code change.
 - Platform: iOS (Swift/SwiftUI). **Minimum supported OS: iOS 26**
   (`IPHONEOS_DEPLOYMENT_TARGET = 26.0`), built against the iOS 27 SDK with
   Xcode 27+.
@@ -133,6 +153,9 @@ feature.
 
 ### 4.1 App Layer
 - SwiftUI + Swift Charts, iOS 26+.
+- Localization via a String Catalog (`Localizable.xcstrings`, source language
+  English). Strings outside a SwiftUI view literal are resolved with
+  `String(localized:)` and handed around as plain `String`.
 - **No third-party dependencies.** No Swift Package dependencies at all.
 - State lives in one `@MainActor @Observable` container (`FamilyStore`) injected
   via `.environment(...)`; persistence stays out of the views.
@@ -190,6 +213,7 @@ no network surface to secure.
     chart range and for a single fever episode.
 
 **Later (optional)**
+- More languages (the catalog makes this additive).
 - CSV export.
 - Local reminders ("nächste Gabe möglich").
 - HealthKit read/write, if it can be done without weakening the local-only

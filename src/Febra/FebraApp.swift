@@ -16,12 +16,11 @@ struct FebraApp: App {
 
     var body: some Scene {
         WindowGroup {
+            // The app ships English and German (spec §3). Copy comes from the
+            // string catalog and dates/numbers follow the device locale, so
+            // nothing is pinned here — iOS's per-app language setting is what
+            // switches the app (see SettingsView).
             ContentView()
-                // The app is German-only (spec §3): force German date/number
-                // formatting everywhere so an English device locale can't leak
-                // through (e.g. "Jul 5 at 2:00 PM" / "39.4" instead of
-                // "5. Juli, 14:00" / "39,4"). Sheets inherit this environment.
-                .environment(\.locale, Locale(identifier: "de_DE"))
                 .environment(store)
         }
     }

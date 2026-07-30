@@ -27,30 +27,30 @@ struct MedicationTypeFormView: View {
             Form {
                 Section {
                     TextField("Name", text: $name)
-                    TextField("Standard-Dosierung (optional)", text: $dosage)
+                    TextField("Default dosage (optional)", text: $dosage)
                 } footer: {
-                    Text("Standard-Dosierung z. B. „250 mg“ oder „5 ml“ – wird beim Erfassen vorausgefüllt.")
+                    Text("Default dosage e.g. “250 mg” or “5 ml” — prefilled when logging a dose.")
                 }
 
                 Section {
-                    Toggle("Mindestabstand festlegen", isOn: $hasInterval.animation())
+                    Toggle("Set a minimum interval", isOn: $hasInterval.animation())
                     if hasInterval {
                         Stepper(value: $intervalHours, in: 1...48, step: 1) {
-                            Text("Alle \(Int(intervalHours)) Std.")
+                            Text("Every \(Int(intervalHours)) hr")
                         }
                     }
                 } footer: {
-                    Text("Mindestabstand zwischen zwei Gaben. Daraus wird „nächste Gabe möglich in …“ berechnet – ein Richtwert, keine ärztliche Dosierempfehlung.")
+                    Text("Minimum interval between two doses. It drives the “next dose possible in…” countdown — a reminder, not a medical dosing recommendation.")
                 }
             }
-            .navigationTitle(medicationType == nil ? "Medikament hinzufügen" : "Medikament bearbeiten")
+            .navigationTitle(medicationType == nil ? "Add medication" : "Edit medication")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Abbrechen") { dismiss() }
+                    Button("Cancel") { dismiss() }
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Sichern", action: save)
+                    Button("Save", action: save)
                         .disabled(name.trimmingCharacters(in: .whitespaces).isEmpty)
                 }
             }
@@ -89,12 +89,12 @@ struct MedicationTypeFormView: View {
     }
 }
 
-#Preview("Neu") {
+#Preview("New") {
     MedicationTypeFormView()
         .environment(FamilyStore.preview)
 }
 
-#Preview("Bearbeiten") {
+#Preview("Edit") {
     let store = FamilyStore.preview
     return MedicationTypeFormView(medicationType: store.sortedMedicationTypes.first!)
         .environment(store)

@@ -26,14 +26,14 @@ struct MemberDetailView: View {
             content(for: member)
         } else {
             // The member was deleted while this screen was on the stack.
-            ContentUnavailableView("Mitglied nicht gefunden", systemImage: "person.slash")
+            ContentUnavailableView("Member not found", systemImage: "person.slash")
         }
     }
 
     private func content(for member: FamilyMember) -> some View {
         ScrollView {
             VStack(spacing: 16) {
-                Picker("Zeitraum", selection: $range) {
+                Picker("Period", selection: $range) {
                     ForEach(ChartRange.allCases) { range in
                         Text(range.label).tag(range)
                     }
@@ -62,12 +62,12 @@ struct MemberDetailView: View {
                     Button {
                         showsAddReading = true
                     } label: {
-                        Label("Temperatur erfassen", systemImage: "medical.thermometer")
+                        Label("Add temperature", systemImage: "medical.thermometer")
                     }
                     Button {
                         showsAddMedication = true
                     } label: {
-                        Label("Medikament erfassen", systemImage: "pills")
+                        Label("Log medication", systemImage: "pills")
                     }
                     if !rangeReadings.isEmpty {
                         Divider()
@@ -78,24 +78,24 @@ struct MemberDetailView: View {
                                 readings: rangeReadings,
                                 medications: rangeMedications
                             ),
-                            preview: SharePreview("Verlauf · \(member.name)")
+                            preview: SharePreview("History · \(member.name)")
                         ) {
-                            Label("Export als PDF", systemImage: "square.and.arrow.up")
+                            Label("Export as PDF", systemImage: "square.and.arrow.up")
                         }
                     }
                     Divider()
                     Button {
                         showsEditMember = true
                     } label: {
-                        Label("Mitglied bearbeiten", systemImage: "pencil")
+                        Label("Edit member", systemImage: "pencil")
                     }
                     Button(role: .destructive) {
                         showsDeleteConfirmation = true
                     } label: {
-                        Label("Mitglied löschen", systemImage: "trash")
+                        Label("Delete member", systemImage: "trash")
                     }
                 } label: {
-                    Label("Aktionen", systemImage: "ellipsis.circle")
+                    Label("Actions", systemImage: "ellipsis.circle")
                 }
             }
         }
@@ -111,11 +111,11 @@ struct MemberDetailView: View {
             MemberFormView(member: member)
         }
         .confirmationDialog(
-            "„\(member.name)“ und alle zugehörigen Messungen und Medikamente löschen?",
+            "Delete “\(member.name)” and all of their readings and medications?",
             isPresented: $showsDeleteConfirmation,
             titleVisibility: .visible
         ) {
-            Button("Löschen", role: .destructive) {
+            Button("Delete", role: .destructive) {
                 store.removeMember(memberID)
                 dismiss()
             }
@@ -128,9 +128,9 @@ struct MemberDetailView: View {
         VStack(alignment: .leading, spacing: 12) {
             if rangeReadings.isEmpty {
                 ContentUnavailableView {
-                    Label("Keine Messungen", systemImage: "chart.xyaxis.line")
+                    Label("No readings", systemImage: "chart.xyaxis.line")
                 } description: {
-                    Text("Im gewählten Zeitraum gibt es keine Messungen.")
+                    Text("No readings in the selected period.")
                 }
             } else {
                 TemperatureChartView(
@@ -155,7 +155,9 @@ struct MemberDetailView: View {
                     Label(trendDescription(for: trend), systemImage: trendSymbol(for: trend))
                         .font(.headline)
                     Spacer()
-                    Text("\(trend.slopePerHour >= 0 ? "+" : "")\(trend.slopePerHour.formatted(.number.precision(.fractionLength(2)))) °C/h")
+                    // Composed String, so `Text` renders it verbatim — a
+                    // signed number needs no translation.
+                    Text(slopeText(for: trend))
                         .foregroundStyle(.secondary)
                         .monospacedDigit()
                 }
@@ -193,9 +195,15 @@ struct MemberDetailView: View {
     }
 
     /// The short-term extrapolation only makes sense on short windows; on
-    /// "30 Tage"/"Alle" a 3-hour dashed tail would be invisible anyway.
+    /// "30 days"/"All" a 3-hour dashed tail would be invisible anyway.
     private var showsForecast: Bool {
         range == .day || range == .week
+    }
+
+    /// "+0.12 °C/h" — sign kept explicit so a rise reads as a rise.
+    private func slopeText(for trend: TemperatureTrend) -> String {
+        let sign = trend.slopePerHour >= 0 ? "+" : ""
+        return "\(sign)\(trend.slopePerHour.formatted(.number.precision(.fractionLength(2)))) °C/h"
     }
 
     private func trendSymbol(for trend: TemperatureTrend) -> String {
@@ -208,9 +216,9 @@ struct MemberDetailView: View {
 
     private func trendDescription(for trend: TemperatureTrend) -> String {
         switch trend.direction {
-        case .rising: "Steigend"
-        case .falling: "Fallend"
-        case .steady: "Gleichbleibend"
+        case .rising: String(localized: "Rising")
+        case .falling: String(localized: "Falling")
+        case .steady: String(localized: "Steady")
         }
     }
 }
@@ -229,7 +237,7 @@ private struct NextDoseCard: View {
             // Refresh the countdown every minute so "in 2 Std. 10 Min." stays honest.
             TimelineView(.periodic(from: .now, by: 60)) { context in
                 VStack(alignment: .leading, spacing: 12) {
-                    Text("Nächste Gabe")
+                    Text("Next dose")
                         .font(.headline)
 
                     VStack(spacing: 0) {
@@ -242,7 +250,7 @@ private struct NextDoseCard: View {
                         }
                     }
 
-                    Text("Mindestabstand als Erinnerung – keine ärztliche Dosierempfehlung.")
+                    Text("The minimum interval is a reminder, not a medical dosing recommendation.")
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
@@ -265,7 +273,7 @@ private struct NextDoseRow: View {
                 .foregroundStyle(.indigo)
             Spacer()
             if guidance.isReady(asOf: now) {
-                Label("Jetzt möglich", systemImage: "checkmark.circle.fill")
+                Label("Possible now", systemImage: "checkmark.circle.fill")
                     .font(.subheadline.weight(.semibold))
                     .foregroundStyle(.green)
             } else {
@@ -282,15 +290,15 @@ private struct NextDoseRow: View {
         }
     }
 
-    /// German "2 Std. 10 Min." style remaining-time string, minutes rounded up so
-    /// the countdown never reads 0 while time is still left.
+    /// "2 hr 10 min" style remaining-time string, minutes rounded up so the
+    /// countdown never reads 0 while time is still left.
     private static func remaining(from now: Date, to target: Date) -> String {
         let totalMinutes = max(0, Int((target.timeIntervalSince(now) / 60).rounded(.up)))
         let hours = totalMinutes / 60
         let minutes = totalMinutes % 60
-        if hours > 0 && minutes > 0 { return "\(hours) Std. \(minutes) Min." }
-        if hours > 0 { return "\(hours) Std." }
-        return "\(minutes) Min."
+        if hours > 0 && minutes > 0 { return String(localized: "\(hours) hr \(minutes) min") }
+        if hours > 0 { return String(localized: "\(hours) hr") }
+        return String(localized: "\(minutes) min")
     }
 }
 
@@ -305,7 +313,7 @@ private struct EpisodesCard: View {
     var body: some View {
         if !episodes.isEmpty, let member = store.member(with: memberID) {
             VStack(alignment: .leading, spacing: 12) {
-                Text("Fieber-Episoden")
+                Text("Fever episodes")
                     .font(.headline)
 
                 VStack(spacing: 0) {
@@ -356,11 +364,11 @@ private struct TimelineCard: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Einträge")
+            Text("Entries")
                 .font(.headline)
 
             if timeline.isEmpty {
-                Text("Noch keine Einträge.")
+                Text("No entries yet.")
                     .foregroundStyle(.secondary)
             } else {
                 VStack(spacing: 0) {
@@ -370,11 +378,11 @@ private struct TimelineCard: View {
                             .contentShape(.rect)
                             .contextMenu {
                                 if case .reading(let reading) = entry {
-                                    Button("Bearbeiten", systemImage: "pencil") {
+                                    Button("Edit", systemImage: "pencil") {
                                         editingReading = reading
                                     }
                                 }
-                                Button("Löschen", systemImage: "trash", role: .destructive) {
+                                Button("Delete", systemImage: "trash", role: .destructive) {
                                     delete(entry)
                                 }
                             }
@@ -384,7 +392,7 @@ private struct TimelineCard: View {
                     }
                 }
 
-                Text("Eintrag bearbeiten oder löschen: Zeile gedrückt halten.")
+                Text("Press and hold a row to edit or delete an entry.")
                     .font(.caption2)
                     .foregroundStyle(.tertiary)
             }
@@ -411,15 +419,16 @@ private struct TimelineCard: View {
         // Bind the store reference locally so the undo closure captures it
         // directly rather than reading `@Environment` after `body` has ended.
         let store = store
+        let undo = String(localized: "Undo")
         switch entry {
         case .reading(let reading):
             store.removeReading(reading.id)
-            toast = Toast(message: "Messung gelöscht", style: .success, action: .init(title: "Rückgängig") {
+            toast = Toast(message: String(localized: "Reading deleted"), style: .success, action: .init(title: undo) {
                 store.addReading(reading)
             })
         case .dose(let dose):
             store.removeMedication(dose.id)
-            toast = Toast(message: "Medikament gelöscht", style: .success, action: .init(title: "Rückgängig") {
+            toast = Toast(message: String(localized: "Medication deleted"), style: .success, action: .init(title: undo) {
                 store.addMedication(dose)
             })
         }

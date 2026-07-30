@@ -36,27 +36,35 @@ struct Changelog: Equatable {
         case fixed = "Fixed"
         case removed = "Removed"
 
-        /// German label shown on the in-app badge.
+        /// Label shown on the in-app badge.
         var label: String {
             switch self {
-            case .added: "Neu"
-            case .changed: "Geändert"
-            case .fixed: "Behoben"
-            case .removed: "Entfernt"
+            case .added: String(localized: "New")
+            case .changed: String(localized: "Changed")
+            case .fixed: String(localized: "Fixed")
+            case .removed: String(localized: "Removed")
             }
         }
     }
 }
 
 extension Changelog {
-    /// Loads and parses `USER_CHANGELOG.md` from the app bundle. Returns an
-    /// empty changelog if the resource is missing or unreadable.
-    static func loadFromBundle(_ bundle: Bundle = .main) -> Changelog {
-        guard let url = bundle.url(forResource: "USER_CHANGELOG", withExtension: "md"),
-              let text = try? String(contentsOf: url, encoding: .utf8) else {
-            return Changelog(releases: [])
+    /// Loads and parses the user changelog for the current app language from
+    /// the bundle. The release notes are prose, not UI strings, so they live in
+    /// one markdown file per language (`USER_CHANGELOG.md` is English,
+    /// `USER_CHANGELOG.<lang>.md` a translation) rather than in the string
+    /// catalog. Falls back to English, then to an empty changelog.
+    static func loadFromBundle(
+        _ bundle: Bundle = .main,
+        language: String? = Locale.current.language.languageCode?.identifier
+    ) -> Changelog {
+        let candidates = [language.map { "USER_CHANGELOG.\($0)" }, "USER_CHANGELOG"].compactMap { $0 }
+        for name in candidates {
+            guard let url = bundle.url(forResource: name, withExtension: "md"),
+                  let text = try? String(contentsOf: url, encoding: .utf8) else { continue }
+            return parse(text)
         }
-        return parse(text)
+        return Changelog(releases: [])
     }
 
     /// Parses "Keep a Changelog"-style markdown into released versions, newest

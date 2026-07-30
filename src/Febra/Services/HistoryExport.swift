@@ -14,8 +14,8 @@ import UniformTypeIdentifiers
 /// native `ImageRenderer` — no third-party dependency.
 struct HistoryExport: Sendable {
     let memberName: String
-    /// Second title line describing the exported scope, e.g. "Verlauf · 7 Tage"
-    /// or "Fieber-Episode · gestern, 14:00 – heute, 08:00".
+    /// Second title line describing the exported scope, e.g. "History · 7 days"
+    /// or "Fever episode · yesterday, 2:00 PM – today, 8:00 AM".
     let subtitle: String
     /// Age-dependent bounds — threshold lines in the chart and the legend text.
     let thresholds: FeverLevel.Thresholds
@@ -48,10 +48,12 @@ struct HistoryExport: Sendable {
     /// A4 portrait width in points; the page grows tall to fit its content.
     static let pageWidth: CGFloat = 595
 
-    /// "Erhöht ab 37,6 °C · Fieber ab 38,5 °C" — the same thresholds the chart
-    /// draws, spelled out for the doctor.
+    /// "Elevated from 37.6 °C · Fever from 38.5 °C" — the same thresholds the
+    /// chart draws, spelled out for the doctor.
     var thresholdsLegend: String {
-        "Erhöht ab \(thresholds.elevated.asTemperature) · Fieber ab \(thresholds.fever.asTemperature)"
+        let elevated = String(localized: "Elevated from \(thresholds.elevated.asTemperature)")
+        let fever = String(localized: "Fever from \(thresholds.fever.asTemperature)")
+        return "\(elevated) · \(fever)"
     }
 
     /// Suggested share-sheet file name, e.g. "Febra-Emma-2026-07-06.pdf".
@@ -116,7 +118,7 @@ extension HistoryExport {
     ) {
         self.init(
             memberName: member.name,
-            subtitle: "Verlauf · \(range.label)",
+            subtitle: String(localized: "History · \(range.label)"),
             thresholds: member.feverThresholds(),
             accentColor: member.colorTag.color,
             readings: readings,
@@ -137,7 +139,7 @@ extension HistoryExport {
         let span = "\(FeverEpisodeFormat.dayTime(episode.start)) – \(FeverEpisodeFormat.dayTime(episode.end))"
         self.init(
             memberName: member.name,
-            subtitle: "Fieber-Episode · \(span)",
+            subtitle: String(localized: "Fever episode · \(span)"),
             thresholds: member.feverThresholds(),
             accentColor: member.colorTag.color,
             readings: episode.readings,

@@ -32,7 +32,7 @@ struct FeverEpisode: Identifiable, Sendable {
     ///
     /// A run is any sequence of readings ≥ the elevated threshold with no gap
     /// longer than `gapTolerance`; a run is surfaced as an episode only once its
-    /// peak reached the fever threshold, so a lone "erhöht" blip is ignored. The
+    /// peak reached the fever threshold, so a lone "elevated" blip is ignored. The
     /// elevated shoulders are kept in the run so `start`/`duration` cover the
     /// full ramp-up and cool-down.
     static func episodes(

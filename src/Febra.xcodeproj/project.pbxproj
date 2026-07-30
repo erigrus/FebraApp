@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FB4653A0000000000000B002 /* USER_CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = FB4653A0000000000000B001 /* USER_CHANGELOG.md */; };
+		FB4653A0000000000000B004 /* USER_CHANGELOG.de.md in Resources */ = {isa = PBXBuildFile; fileRef = FB4653A0000000000000B003 /* USER_CHANGELOG.de.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +33,7 @@
 		1ED2D3112FF6339300657C24 /* FebraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FebraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ED2D31B2FF6339300657C24 /* FebraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FebraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB4653A0000000000000B001 /* USER_CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = USER_CHANGELOG.md; sourceTree = SOURCE_ROOT; };
+		FB4653A0000000000000B003 /* USER_CHANGELOG.de.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = USER_CHANGELOG.de.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				FB4653A0000000000000B001 /* USER_CHANGELOG.md */,
+				FB4653A0000000000000B003 /* USER_CHANGELOG.de.md */,
 				1ED2D3062FF6339100657C24 /* Febra */,
 				1ED2D3142FF6339300657C24 /* FebraTests */,
 				1ED2D31E2FF6339300657C24 /* FebraUITests */,
@@ -184,6 +187,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 1ED2D2FB2FF6339100657C24;
 			minimizedProjectReferenceProxies = 1;
@@ -204,6 +208,7 @@
 			isa = PBXResourcesBuildPhase;
 			files = (
 				FB4653A0000000000000B002 /* USER_CHANGELOG.md in Resources */,
+				FB4653A0000000000000B004 /* USER_CHANGELOG.de.md in Resources */,
 			);
 		};
 		1ED2D30F2FF6339300657C24 /* Resources */ = {

@@ -63,9 +63,9 @@ enum FeverLevel: Sendable, CaseIterable {
 
     var label: String {
         switch self {
-        case .normal: "Normal"
-        case .elevated: "Erhöht"
-        case .fever: "Fieber"
+        case .normal: String(localized: "Normal")
+        case .elevated: String(localized: "Elevated")
+        case .fever: String(localized: "Fever")
         }
     }
 }

@@ -36,7 +36,8 @@ you usually don't have to touch `project.pbxproj`.
 │   ├── FebraUITests/           # XCTest UI tests
 │   ├── ci_scripts/             # Xcode Cloud hooks (ci_pre_xcodebuild.sh)
 │   ├── CHANGELOG.md            # technical changelog (Keep a Changelog)
-│   ├── USER_CHANGELOG.md       # curated user-facing "What's New" (German)
+│   ├── USER_CHANGELOG.md       # curated user-facing "What's new" (English)
+│   ├── USER_CHANGELOG.de.md    # its German translation
 │   └── version.txt             # current released version
 └── docs/
     └── family-fever-tracker-requirements.md   # product spec
@@ -78,9 +79,10 @@ For any non-trivial change (bug, feature, refactor):
 - Add a bullet under `## [Unreleased]` in `src/CHANGELOG.md` for any change, in
   an `### Added` / `### Changed` / `### Fixed` / `### Removed` subsection. Febra
   is single-platform, so bullets are **not** platform-tagged.
-- For any **user-visible** change, also add a friendly, plain-language **German**
-  bullet under `## [Unreleased]` in `src/USER_CHANGELOG.md` — that file is shown
-  in the in-app "Was ist neu" screen and reused as App Store release notes.
+- For any **user-visible** change, also add a friendly, plain-language bullet
+  under `## [Unreleased]` in `src/USER_CHANGELOG.md` **and its German
+  translation** in `src/USER_CHANGELOG.de.md` — those files are shown in the
+  in-app "What's new" screen and reused as App Store release notes.
 - Leave `MARKETING_VERSION`, `CURRENT_PROJECT_VERSION` and `src/version.txt`
   alone, and leave the `## [Unreleased]` heading in place.
 
@@ -117,6 +119,20 @@ cloud-synced Febra it descends from:
 Since nothing is collected or transmitted, the App Store privacy questionnaire
 is answered as **"Data Not Collected"**.
 
+## Localization
+
+The app ships **English (source) and German**. Working rules:
+
+- English literals in code; translations in `src/Febra/Localizable.xcstrings`
+  (Xcode's String Catalog editor).
+- SwiftUI view initializers take a `LocalizedStringKey` and localize on their
+  own. Anywhere else (enum labels, formatters, toast messages) use
+  `String(localized:)` — `Text(aString)` renders verbatim.
+- Never pin `\.locale`; dates and numbers follow the device.
+- Add the `de` value for every new key in the same PR.
+- Test both languages in the simulator by switching the scheme's App Language
+  (Product → Scheme → Edit Scheme → Options), or per app in iOS Settings.
+
 ## Tests
 
 - Unit tests use the **Swift Testing** framework (`import Testing`, `@Test`,
@@ -140,6 +156,7 @@ is answered as **"Data Not Collected"**.
 | App source (views, models, services) | `src/Febra/` |
 | A unit test | `src/FebraTests/` |
 | A UI test | `src/FebraUITests/` |
+| A user-facing string | English in the code, `de` in `src/Febra/Localizable.xcstrings` |
 | An Xcode Cloud CI hook | `src/ci_scripts/` |
 | A product/design doc | `docs/` |
 

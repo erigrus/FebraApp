@@ -5,8 +5,9 @@
 
 import SwiftUI
 
-/// A transient status banner shown over a screen — e.g. the "Eintrag gelöscht"
-/// confirmation with its undo action (#45).
+/// A transient status banner shown over a screen — e.g. the "Reading deleted"
+/// confirmation with its undo action (#45). `message` and the action title are
+/// plain `String`s: callers pass already-localized text (`String(localized:)`).
 struct Toast: Equatable, Identifiable {
     enum Style: Equatable {
         case progress   // an ongoing operation (shows a spinner)
@@ -30,7 +31,7 @@ struct Toast: Equatable, Identifiable {
         }
     }
 
-    /// An optional trailing button — e.g. "Rückgängig" to undo a deletion (#45).
+    /// An optional trailing button — e.g. "Undo" to revert a deletion (#45).
     struct Action {
         let title: String
         let handler: () -> Void

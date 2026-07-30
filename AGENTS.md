@@ -16,13 +16,22 @@ workflow.
 A change that breaks either rule is a product decision, not an implementation
 detail — ask the owner first.
 
+## Localization
+
+The app ships **English (source) and German**. Never write a German literal in
+code: put English in the source and the translation in
+`src/Febra/Localizable.xcstrings`. Strings built outside a SwiftUI view
+initializer need `String(localized:)` — `Text(someString)` is verbatim. User
+changelog entries go in **both** `src/USER_CHANGELOG.md` (English) and
+`src/USER_CHANGELOG.de.md` (German).
+
 ## Releases
 
 Version bumps are manual in this repo. In an ordinary feature/fix PR:
 
 - Add the changelog bullet under `## [Unreleased]` in `src/CHANGELOG.md` (and,
-  when user-facing, a plain-language **German** bullet in
-  `src/USER_CHANGELOG.md`) and **stop**.
+  when user-facing, a plain-language bullet in **both** `src/USER_CHANGELOG.md`
+  and `src/USER_CHANGELOG.de.md`) and **stop**.
 - Do **not** promote `## [Unreleased]` to a dated `## [X.Y.Z]` heading, bump
   `MARKETING_VERSION` / `src/version.txt`, or create tags — that happens in a
   separate release commit.

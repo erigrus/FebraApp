@@ -5,19 +5,23 @@
 
 import Foundation
 
-/// Shared German UI copy that appears on more than one screen.
+/// Shared UI copy that appears on more than one screen. Resolved through the
+/// string catalog, so every surface shows it in the current app language.
 enum AppCopy {
     /// Required in-app disclaimer (spec §3): the app makes no medical claims.
-    static let medicalDisclaimer =
-        "Febra ersetzt keine ärztliche Beratung. Bei hohem oder anhaltendem Fieber bitte ärztlichen Rat einholen."
+    static var medicalDisclaimer: String {
+        String(localized: "Febra is no substitute for medical advice. With a high or persistent fever, please consult a doctor.")
+    }
 
     /// Must accompany every surface that shows the trend extrapolation (§5).
-    static let forecastDisclaimer =
-        "Die Prognose ist eine grobe Hochrechnung der letzten Messungen – keine medizinische Vorhersage."
+    static var forecastDisclaimer: String {
+        String(localized: "The forecast is a rough extrapolation of the most recent readings — not a medical prediction.")
+    }
 }
 
 extension Double {
-    /// Formats a °C value for display in the device locale, e.g. "38,2 °C".
+    /// Formats a °C value for display in the current locale, e.g. "38.2 °C"
+    /// / "38,2 °C".
     var asTemperature: String {
         "\(formatted(.number.precision(.fractionLength(1)))) °C"
     }

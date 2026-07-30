@@ -32,6 +32,12 @@ struct MedicationType: Identifiable, Codable, Hashable, Sendable {
         self.defaultDosage = defaultDosage
     }
 
+    /// "every 6 hr" — the interval phrasing shared by the catalog rows, the
+    /// dose-form picker and the suggestion menu.
+    static func intervalText(_ hours: Double) -> String {
+        String(localized: "every \(Int(hours)) hr")
+    }
+
     /// Common starting points offered when the list is still empty. Intervals are
     /// widely-cited minimums for children's antipyretics — still user-editable and
     /// explicitly not a dosing recommendation.

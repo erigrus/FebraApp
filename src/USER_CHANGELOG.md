@@ -1,30 +1,38 @@
-# Neuigkeiten
+# What's new
 
-Nutzerorientierte Versionshinweise in einfacher Sprache. Diese Einträge werden
-im In-App-Bildschirm „Was ist neu“ angezeigt und wortgleich als „Was ist neu“-
-Text im App Store übernommen – halte sie freundlich und frei von internem
-Fachjargon, aber weiterhin gruppiert unter `### Added` / `### Changed` /
-`### Fixed`, damit jede Kategorie ihr eigenes Abzeichen anzeigen kann.
+User-facing release notes in plain language. These entries are shown on the
+in-app "What's new" screen and reused verbatim as the App Store "What's New"
+text — keep them friendly and free of internal jargon, but still grouped under
+`### Added` / `### Changed` / `### Fixed` so each category can render its own
+badge.
 
-Füge während der Entwicklung Einträge unter `## [Unreleased]` hinzu. Jeder
-Build, den ein Nutzer verwendet, ist ein veröffentlichter Build, daher wird der
-Abschnitt `## [Unreleased]` nie in der App angezeigt.
+This file is the **English** source; `USER_CHANGELOG.de.md` holds the German
+translation and must be updated in the same PR. The headings
+(`## [X.Y.Z] - YYYY-MM-DD`, `### Added` …) are parsed, not displayed, so they
+stay English in every language file.
+
+Add entries under `## [Unreleased]` while developing. Every build a user runs is
+a released build, so `## [Unreleased]` is never shown in the app.
 
 ## [Unreleased]
 
 ## [1.0.0] - 2026-07-29
 
 ### Added
-- Febra ist da: Fieber für alle in der Familie erfassen – mit Verlaufskurve,
-  altersabhängigen Fieber-Grenzen und Trend.
-- Alle Daten bleiben auf deinem Gerät. Kein Konto, keine Anmeldung, keine Cloud –
-  Febra braucht nicht einmal eine Internetverbindung.
-- Messungen trägst du selbst ein: Temperatur, Person, Zeitpunkt und optional
-  eine Notiz. Einträge lassen sich nachträglich korrigieren oder löschen.
-- Medikamente mitschreiben: Name, Dosis und Zeitpunkt erscheinen direkt in der
-  Kurve, damit du siehst, wie das Fieber danach verläuft.
-- Medikamentenliste mit Mindestabstand: Febra zeigt dir, wann die nächste Gabe
-  möglich ist. Das ist eine Erinnerung, keine ärztliche Dosierempfehlung.
-- Fieber-Episoden werden automatisch zusammengefasst – mit Höchstwert, Dauer und
-  Anzahl der Gaben.
-- Verlauf als PDF exportieren, zum Beispiel für den Arztbesuch.
+- Febra is here: track fever for everyone in the family — with a history chart,
+  age-dependent fever thresholds and a trend.
+- All data stays on your device. No account, no sign-in, no cloud — Febra
+  doesn't even need an internet connection.
+- You enter measurements yourself: temperature, person, time and an optional
+  note. Entries can be corrected or deleted afterwards.
+- Log medications: name, dose and time appear right in the chart, so you can see
+  how the fever behaves afterwards.
+- Medication list with a minimum interval: Febra shows you when the next dose is
+  possible. That's a reminder, not a medical dosing recommendation.
+- Fever episodes are summarised automatically — with the peak, the duration and
+  the number of doses.
+- Export a history as a PDF, for example for a doctor's visit.
+- English and German: the app follows your device language and can be switched
+  per app in iOS Settings.
+- A settings screen behind the gear icon, with the medication list, the language
+  setting, "What's new" and the app version.

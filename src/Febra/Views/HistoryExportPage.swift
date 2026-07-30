@@ -39,7 +39,7 @@ struct HistoryExportPage: View {
     @ViewBuilder
     private var chart: some View {
         if export.readings.isEmpty {
-            Text("Im gewählten Zeitraum gibt es keine Messungen.")
+            Text("No readings in the selected period.")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
         } else {
@@ -65,10 +65,10 @@ struct HistoryExportPage: View {
         if !rows.isEmpty {
             Grid(alignment: .leading, horizontalSpacing: 16, verticalSpacing: 8) {
                 GridRow {
-                    Text("Zeit")
-                    Text("Temperatur")
-                    Text("Medikament")
-                    Text("Notiz")
+                    Text("Time")
+                    Text("Temperature")
+                    Text("Medication")
+                    Text("Note")
                 }
                 .font(.caption.weight(.semibold))
                 .foregroundStyle(.secondary)
@@ -106,7 +106,7 @@ struct HistoryExportPage: View {
     private var footer: some View {
         VStack(alignment: .leading, spacing: 6) {
             Divider()
-            Text("Erstellt mit Febra am \(export.generatedAt.formatted(.dateTime.day().month().year().hour().minute()))")
+            Text("Created with Febra on \(export.generatedAt.formatted(.dateTime.day().month().year().hour().minute()))")
                 .font(.caption2)
                 .foregroundStyle(.secondary)
             Text(AppCopy.medicalDisclaimer)

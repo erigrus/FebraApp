@@ -58,7 +58,9 @@ The project uses Xcode's **synchronized folder groups** — adding files under
   `HistoryExport` — which take values in and return values out, so they are
   testable without a store.
 - `Views/` — SwiftUI only. Views read the store from the environment; they never
-  touch the file system.
+  touch the file system. `SettingsView` is the home for anything that isn't a
+  per-member action (medication list, language, what's new, about).
+- `Localizable.xcstrings` — the string catalog (source language English).
 
 ## Code conventions
 
@@ -81,12 +83,26 @@ The project uses Xcode's **synchronized folder groups** — adding files under
 - Commits follow **Conventional Commits** (`feat:`, `fix:`, `refactor:`,
   `chore:`, `test:`, `docs:`).
 
-## German-only UI
+## Localization (English + German)
 
-The app is German-only (spec §3). All user-visible copy is German, and
-`FebraApp.swift` pins `\.locale` to `de_DE` so an English device locale can't
-leak English date/number formatting into the UI. `USER_CHANGELOG.md` is
-user-facing and therefore German; `CHANGELOG.md` stays English.
+English is the **development language and the source of every string**; German
+is a full translation (spec §3). Rules:
+
+- Never write a German literal in code. UI copy is English in the source and
+  translated in `src/Febra/Localizable.xcstrings`.
+- A string inside a SwiftUI view initializer (`Text("Next dose")`,
+  `Button("Save")`, `.navigationTitle(…)`) is a `LocalizedStringKey` and needs
+  nothing extra.
+- A string built anywhere else — an enum's `label`, a formatter, a `Toast`
+  message — must be wrapped in `String(localized:)`, because `Text(someString)`
+  renders a plain `String` **verbatim**.
+- Do not pin `\.locale`: dates and numbers follow the device.
+- Every new key needs a `de` entry in the catalog. `LocalizationTests` fails if
+  the German catalog stops compiling into the bundle.
+- Release notes are prose, not UI strings: `USER_CHANGELOG.md` is the English
+  source and `USER_CHANGELOG.de.md` its translation. Both are bundled;
+  `Changelog.loadFromBundle` picks by app language and falls back to English.
+  `CHANGELOG.md` (technical) stays English only.
 
 ## Secrets
 
@@ -104,7 +120,8 @@ it's versioned product spec, not background reading.
 - **`main`** is the default branch; feature/fix PRs target `main`.
 - Version bumps are **manual** here (there is no release workflow yet):
   a release commit promotes `## [Unreleased]` to a dated heading in
-  `src/CHANGELOG.md` and `src/USER_CHANGELOG.md`, and sets `src/version.txt`
+  `src/CHANGELOG.md`, `src/USER_CHANGELOG.md` and `src/USER_CHANGELOG.de.md`,
+  and sets `src/version.txt`
   plus every `MARKETING_VERSION` in `src/Febra.xcodeproj/project.pbxproj`.
 - `CURRENT_PROJECT_VERSION` (the App Store build number) is stamped by
   `src/ci_scripts/ci_pre_xcodebuild.sh` from Xcode Cloud's `$CI_BUILD_NUMBER` on

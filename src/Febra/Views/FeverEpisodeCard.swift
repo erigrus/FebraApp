@@ -28,13 +28,13 @@ struct FeverEpisodeCard: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Label("Fieber-Episode", systemImage: "thermometer.high")
+            Label("Fever episode", systemImage: "thermometer.high")
                 .font(.headline)
                 .foregroundStyle(peakColor)
 
             VStack(alignment: .leading, spacing: 4) {
                 HStack(alignment: .firstTextBaseline, spacing: 6) {
-                    Text("Höchstwert")
+                    Text("Peak")
                         .foregroundStyle(.secondary)
                     Text(episode.peak.value.asTemperature)
                         .font(.title2.weight(.semibold))
@@ -60,19 +60,19 @@ struct FeverEpisodeCard: View {
         .glassEffect(.regular, in: .rect(cornerRadius: 26))
     }
 
-    /// "3 Gaben · über 18 Std." — the duration part is dropped for a
+    /// "3 doses · over 18 hr" — the duration part is dropped for a
     /// single-reading episode.
     private var metricsLine: String {
         var parts = [FeverEpisodeFormat.doses(episode.doseCount)]
         if let duration = episode.durationText {
-            parts.append("über \(duration)")
+            parts.append(String(localized: "over \(duration)"))
         }
         return parts.joined(separator: " · ")
     }
 
     private var spanLine: String {
         if isOngoing {
-            "seit \(FeverEpisodeFormat.dayTime(episode.start))"
+            String(localized: "since \(FeverEpisodeFormat.dayTime(episode.start))")
         } else {
             "\(FeverEpisodeFormat.dayTime(episode.start)) – \(FeverEpisodeFormat.dayTime(episode.end))"
         }
@@ -141,39 +141,40 @@ struct FeverEpisodeDetailSheet: View {
             .background {
                 AppBackground(tint: member?.colorTag.color ?? .accentColor)
             }
-            .navigationTitle(member?.name ?? "Fieber-Episode")
+            .navigationTitle(member?.name ?? String(localized: "Fever episode"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 if let export {
                     ToolbarItem(placement: .topBarLeading) {
                         ShareLink(
                             item: export,
-                            preview: SharePreview("Fieber-Episode · \(export.memberName)")
+                            preview: SharePreview("Fever episode · \(export.memberName)")
                         ) {
-                            Label("Export als PDF", systemImage: "square.and.arrow.up")
+                            Label("Export as PDF", systemImage: "square.and.arrow.up")
                         }
                     }
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Fertig") { dismiss() }
+                    Button("Done") { dismiss() }
                 }
             }
         }
     }
 }
 
-/// Shared German formatting for the episode surfaces.
+/// Shared formatting for the episode surfaces.
 enum FeverEpisodeFormat {
-    /// German plural of "Gabe" (dose): "1 Gabe" / "3 Gaben".
+    /// "1 dose" / "3 doses". Branching in Swift keeps both languages' one/other
+    /// split in plain string keys instead of catalog plural variations.
     static func doses(_ count: Int) -> String {
-        count == 1 ? "1 Gabe" : "\(count) Gaben"
+        count == 1 ? String(localized: "1 dose") : String(localized: "\(count) doses")
     }
 
-    /// Relative day plus time, e.g. "gestern, 14:00" / "05.07., 14:00".
+    /// Relative day plus time, e.g. "yesterday, 2:00 PM" / "Jul 5, 2:00 PM".
     static func dayTime(_ date: Date, calendar: Calendar = .current) -> String {
         let time = date.formatted(.dateTime.hour().minute())
-        if calendar.isDateInToday(date) { return "heute, \(time)" }
-        if calendar.isDateInYesterday(date) { return "gestern, \(time)" }
+        if calendar.isDateInToday(date) { return String(localized: "today, \(time)") }
+        if calendar.isDateInYesterday(date) { return String(localized: "yesterday, \(time)") }
         return date.formatted(.dateTime.day().month().hour().minute())
     }
 }

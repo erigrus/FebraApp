@@ -7,7 +7,7 @@ import SwiftUI
 
 /// In-app "What's New": renders the bundled user changelog, newest release
 /// first, with a coloured badge per category (spec: reuse of `USER_CHANGELOG.md`
-/// as an in-app changelog screen). Reached from the dashboard "Mehr" menu.
+/// as an in-app changelog screen). Reached from Settings.
 struct WhatsNewView: View {
     @Environment(\.dismiss) private var dismiss
 
@@ -22,19 +22,19 @@ struct WhatsNewView: View {
             Group {
                 if changelog.releases.isEmpty {
                     ContentUnavailableView(
-                        "Keine Neuigkeiten",
+                        "Nothing new",
                         systemImage: "sparkles",
-                        description: Text("Es liegen noch keine Versionshinweise vor.")
+                        description: Text("There are no release notes yet.")
                     )
                 } else {
                     releaseList
                 }
             }
-            .navigationTitle("Was ist neu")
+            .navigationTitle("What's new")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Fertig") { dismiss() }
+                    Button("Done") { dismiss() }
                 }
             }
         }
@@ -120,10 +120,10 @@ private struct CategoryBadge: View {
             date: Date(),
             sections: [
                 Changelog.Section(category: .changed, entries: [
-                    "Fieber-Schwellen passen sich jetzt dem Alter jedes Familienmitglieds an."
+                    "Fever thresholds now adapt to each family member's age."
                 ]),
                 Changelog.Section(category: .added, entries: [
-                    "Deutliche Warnung, bei Babys unter 3 Monaten mit Fieber sofort ärztlichen Rat einzuholen."
+                    "A clear warning to seek medical advice immediately for babies under 3 months with a fever."
                 ])
             ]
         )

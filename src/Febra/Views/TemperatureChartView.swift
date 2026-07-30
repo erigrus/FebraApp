@@ -17,14 +17,14 @@ enum ChartRange: String, CaseIterable, Identifiable {
 
     var label: String {
         switch self {
-        case .day: "24 h"
-        case .week: "7 Tage"
-        case .month: "30 Tage"
-        case .all: "Alle"
+        case .day: String(localized: "24 h")
+        case .week: String(localized: "7 days")
+        case .month: String(localized: "30 days")
+        case .all: String(localized: "All")
         }
     }
 
-    /// Start of the window, or `nil` for "Alle".
+    /// Start of the window, or `nil` for "All".
     func startDate(relativeTo now: Date = .now) -> Date? {
         switch self {
         case .day: now.addingTimeInterval(-24 * 3600)
@@ -71,7 +71,9 @@ struct TemperatureChartView: View {
                 AxisGridLine()
                 AxisValueLabel {
                     if let celsius = value.as(Double.self) {
-                        Text("\(celsius.formatted(.number.precision(.fractionLength(1)))) °C")
+                        // Already-formatted text: `Text(String)` renders it
+                        // verbatim, so no catalog key is needed for a number.
+                        Text(celsius.asTemperature)
                     }
                 }
             }
@@ -83,20 +85,20 @@ struct TemperatureChartView: View {
 
     @ChartContentBuilder
     private var thresholdMarks: some ChartContent {
-        RuleMark(y: .value("Temperatur", thresholds.fever))
+        RuleMark(y: .value("Temperature", thresholds.fever))
             .foregroundStyle(.red.opacity(0.4))
             .lineStyle(StrokeStyle(lineWidth: 1, dash: [6, 4]))
             .annotation(position: .topTrailing, alignment: .trailing) {
-                Text("Fieber")
+                Text("Fever")
                     .font(.caption2)
                     .foregroundStyle(.red)
             }
 
-        RuleMark(y: .value("Temperatur", thresholds.elevated))
+        RuleMark(y: .value("Temperature", thresholds.elevated))
             .foregroundStyle(.yellow.opacity(0.5))
             .lineStyle(StrokeStyle(lineWidth: 1, dash: [6, 4]))
             .annotation(position: .topTrailing, alignment: .trailing) {
-                Text("Erhöht")
+                Text("Elevated")
                     .font(.caption2)
                     .foregroundStyle(.yellow)
             }
@@ -106,16 +108,16 @@ struct TemperatureChartView: View {
     private var readingMarks: some ChartContent {
         ForEach(readings) { reading in
             LineMark(
-                x: .value("Zeit", reading.timestamp),
-                y: .value("Temperatur", reading.value),
-                series: .value("Serie", "Messungen")
+                x: .value("Time", reading.timestamp),
+                y: .value("Temperature", reading.value),
+                series: .value("Series", "Readings")
             )
             .foregroundStyle(accentColor.opacity(0.6))
             .interpolationMethod(.monotone)
 
             PointMark(
-                x: .value("Zeit", reading.timestamp),
-                y: .value("Temperatur", reading.value)
+                x: .value("Time", reading.timestamp),
+                y: .value("Temperature", reading.value)
             )
             .foregroundStyle(FeverLevel(celsius: reading.value, thresholds: thresholds).color)
         }
@@ -126,9 +128,9 @@ struct TemperatureChartView: View {
         if let trend {
             ForEach(trend.forecastPoints(hoursAhead: Self.forecastHours), id: \.date) { point in
                 LineMark(
-                    x: .value("Zeit", point.date),
-                    y: .value("Temperatur", point.value),
-                    series: .value("Serie", "Prognose")
+                    x: .value("Time", point.date),
+                    y: .value("Temperature", point.value),
+                    series: .value("Series", "Forecast")
                 )
                 .foregroundStyle(.secondary)
                 .lineStyle(StrokeStyle(lineWidth: 2, dash: [4, 4]))
@@ -140,8 +142,8 @@ struct TemperatureChartView: View {
     private var medicationMarks: some ChartContent {
         ForEach(medications) { dose in
             PointMark(
-                x: .value("Zeit", dose.timestamp),
-                y: .value("Temperatur", medicationBaseline)
+                x: .value("Time", dose.timestamp),
+                y: .value("Temperature", medicationBaseline)
             )
             .symbol {
                 Image(systemName: "pills.fill")
@@ -154,7 +156,7 @@ struct TemperatureChartView: View {
     @ChartContentBuilder
     private var selectionMarks: some ChartContent {
         if let reading = selectedReading {
-            RuleMark(x: .value("Zeit", reading.timestamp))
+            RuleMark(x: .value("Time", reading.timestamp))
                 .foregroundStyle(.secondary.opacity(0.4))
                 .lineStyle(StrokeStyle(lineWidth: 1))
                 .annotation(
@@ -166,8 +168,8 @@ struct TemperatureChartView: View {
                 }
 
             PointMark(
-                x: .value("Zeit", reading.timestamp),
-                y: .value("Temperatur", reading.value)
+                x: .value("Time", reading.timestamp),
+                y: .value("Temperature", reading.value)
             )
             .foregroundStyle(FeverLevel(celsius: reading.value, thresholds: thresholds).color)
             .symbolSize(160)

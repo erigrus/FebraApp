@@ -37,7 +37,7 @@ struct HistoryExportTests {
     ) -> HistoryExport {
         HistoryExport(
             memberName: "Emma",
-            subtitle: "Verlauf · 24 h",
+            subtitle: "History · 24 h",
             thresholds: thresholds,
             accentColor: .pink,
             readings: readings,
@@ -70,7 +70,10 @@ struct HistoryExportTests {
 
     @Test func thresholdsLegendSpellsOutBounds() {
         let e = export(readings: [reading(hoursAgo: 1, 38.0)])
-        #expect(e.thresholdsLegend == "Erhöht ab 37,6 °C · Fieber ab 38,5 °C")
+        // Both bounds appear, formatted for whatever locale the test runs in —
+        // asserting the literal text would only test the simulator's language.
+        #expect(e.thresholdsLegend.contains(thresholds.elevated.asTemperature))
+        #expect(e.thresholdsLegend.contains(thresholds.fever.asTemperature))
     }
 
     @Test func fileNameStampsMemberAndDate() {
@@ -81,7 +84,7 @@ struct HistoryExportTests {
     @Test func fileNameJoinsMultiWordName() {
         let e = HistoryExport(
             memberName: "Max Mustermann",
-            subtitle: "Verlauf · 24 h",
+            subtitle: "History · 24 h",
             thresholds: thresholds,
             accentColor: .blue,
             readings: [],
@@ -94,7 +97,7 @@ struct HistoryExportTests {
     @Test func rangeInitDescribesSelectedRange() {
         let member = FamilyMember(name: "Emma")
         let e = HistoryExport(member: member, range: .week, readings: [], medications: [])
-        #expect(e.subtitle == "Verlauf · 7 Tage")
+        #expect(e.subtitle.contains(ChartRange.week.label))
     }
 
     @Test func episodeInitKeepsOnlyDosesInsideTheWindow() throws {
@@ -114,6 +117,6 @@ struct HistoryExportTests {
         )
         let e = HistoryExport(member: member, episode: episode, doses: doses)
         #expect(e.medications.count == 1)
-        #expect(e.subtitle.hasPrefix("Fieber-Episode · "))
+        #expect(e.subtitle.contains(FeverEpisodeFormat.dayTime(episode.start)))
     }
 }

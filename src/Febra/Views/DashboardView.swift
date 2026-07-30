@@ -14,8 +14,7 @@ struct DashboardView: View {
     @State private var showsAddMember = false
     @State private var showsAddReading = false
     @State private var showsAddMedication = false
-    @State private var showsWhatsNew = false
-    @State private var showsMedicationCatalog = false
+    @State private var showsSettings = false
 
     var body: some View {
         Group {
@@ -25,19 +24,23 @@ struct DashboardView: View {
                 memberCards
             }
         }
-        .navigationTitle("Übersicht")
+        .navigationTitle("Overview")
         .background {
             AppBackground(tint: store.members.first?.colorTag.color ?? .blue)
         }
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
-                moreMenu
+                Button {
+                    showsSettings = true
+                } label: {
+                    Label("Settings", systemImage: "gearshape")
+                }
             }
             ToolbarItem(placement: .primaryAction) {
                 Button {
                     showsAddMember = true
                 } label: {
-                    Label("Mitglied hinzufügen", systemImage: "person.badge.plus")
+                    Label("Add member", systemImage: "person.badge.plus")
                 }
             }
         }
@@ -57,38 +60,18 @@ struct DashboardView: View {
             AddMedicationView()
                 .presentationDetents([.medium, .large])
         }
-        .sheet(isPresented: $showsWhatsNew) {
-            WhatsNewView()
-        }
-        .sheet(isPresented: $showsMedicationCatalog) {
-            MedicationCatalogView()
-        }
-    }
-
-    private var moreMenu: some View {
-        Menu {
-            Button {
-                showsMedicationCatalog = true
-            } label: {
-                Label("Medikamentenliste", systemImage: "list.bullet.clipboard")
-            }
-            Button {
-                showsWhatsNew = true
-            } label: {
-                Label("Was ist neu", systemImage: "sparkles")
-            }
-        } label: {
-            Label("Mehr", systemImage: "ellipsis.circle")
+        .sheet(isPresented: $showsSettings) {
+            SettingsView()
         }
     }
 
     private var emptyState: some View {
         ContentUnavailableView {
-            Label("Keine Familienmitglieder", systemImage: "person.2")
+            Label("No family members", systemImage: "person.2")
         } description: {
-            Text("Lege zuerst ein Familienmitglied an, um Temperaturen zu erfassen.")
+            Text("Add a family member first to start recording temperatures.")
         } actions: {
-            Button("Mitglied hinzufügen") {
+            Button("Add member") {
                 showsAddMember = true
             }
             .buttonStyle(.glassProminent)
@@ -124,7 +107,7 @@ struct DashboardView: View {
                 Button {
                     showsAddReading = true
                 } label: {
-                    Label("Temperatur", systemImage: "medical.thermometer")
+                    Label("Temperature", systemImage: "medical.thermometer")
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.glassProminent)
@@ -132,7 +115,7 @@ struct DashboardView: View {
                 Button {
                     showsAddMedication = true
                 } label: {
-                    Label("Medikament", systemImage: "pills")
+                    Label("Medication", systemImage: "pills")
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.glass)
@@ -157,11 +140,11 @@ private struct MemberOverviewCard: View {
                 Text(member.name)
                     .font(.headline)
                 if let latest {
-                    Text(latest.timestamp, format: .relative(presentation: .named).locale(Locale(identifier: "de_DE")))
+                    Text(latest.timestamp, format: .relative(presentation: .named))
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 } else {
-                    Text("Noch keine Messung")
+                    Text("No readings yet")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
@@ -183,7 +166,7 @@ private struct MemberOverviewCard: View {
                             .foregroundStyle(level(for: latest).color)
                     }
                     if FeverLevel.needsDoctorWarning(celsius: latest.value, ageInMonths: member.ageInMonths(on: latest.timestamp)) {
-                        Text("Sofort ärztlich abklären")
+                        Text("Seek medical advice now")
                             .font(.caption.weight(.semibold))
                             .foregroundStyle(.red)
                     } else {
@@ -225,9 +208,9 @@ private struct MemberOverviewCard: View {
 
     private func trendLabel(for direction: TemperatureTrend.Direction) -> String {
         switch direction {
-        case .rising: "Steigend"
-        case .falling: "Fallend"
-        case .steady: "Gleichbleibend"
+        case .rising: String(localized: "Rising")
+        case .falling: String(localized: "Falling")
+        case .steady: String(localized: "Steady")
         }
     }
 }

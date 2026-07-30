@@ -25,10 +25,10 @@ struct MemberFormView: View {
                 Section {
                     TextField("Name", text: $name)
 
-                    Toggle("Geburtsdatum angeben", isOn: $hasBirthdate.animation())
+                    Toggle("Set date of birth", isOn: $hasBirthdate.animation())
                     if hasBirthdate {
                         DatePicker(
-                            "Geburtsdatum",
+                            "Date of birth",
                             selection: $birthdate,
                             in: ...Date.now,
                             displayedComponents: .date
@@ -36,18 +36,18 @@ struct MemberFormView: View {
                     }
                 }
 
-                Section("Farbe") {
+                Section("Color") {
                     colorPicker
                 }
             }
-            .navigationTitle(member == nil ? "Mitglied hinzufügen" : "Mitglied bearbeiten")
+            .navigationTitle(member == nil ? "Add member" : "Edit member")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Abbrechen") { dismiss() }
+                    Button("Cancel") { dismiss() }
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Sichern", action: save)
+                    Button("Save", action: save)
                         .disabled(name.trimmingCharacters(in: .whitespaces).isEmpty)
                 }
             }
@@ -109,12 +109,12 @@ struct MemberFormView: View {
     }
 }
 
-#Preview("Neu") {
+#Preview("New") {
     MemberFormView()
         .environment(FamilyStore.preview)
 }
 
-#Preview("Bearbeiten") {
+#Preview("Edit") {
     let store = FamilyStore.preview
     return MemberFormView(member: store.members.first!)
         .environment(store)

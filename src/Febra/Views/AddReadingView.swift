@@ -26,15 +26,15 @@ struct AddReadingView: View {
         NavigationStack {
             Form {
                 Section {
-                    Picker("Mitglied", selection: $memberID) {
+                    Picker("Member", selection: $memberID) {
                         ForEach(store.members) { member in
                             Text(member.name).tag(member.id as UUID?)
                         }
                     }
 
-                    LabeledContent("Temperatur") {
+                    LabeledContent("Temperature") {
                         HStack(spacing: 4) {
-                            TextField("38,0", value: $value, format: .number.precision(.fractionLength(1)))
+                            TextField("38.0", value: $value, format: .number.precision(.fractionLength(1)))
                                 .keyboardType(.decimalPad)
                                 .multilineTextAlignment(.trailing)
                                 .frame(maxWidth: 80)
@@ -43,26 +43,26 @@ struct AddReadingView: View {
                         }
                     }
 
-                    DatePicker("Zeitpunkt", selection: $timestamp, in: ...Date.now)
+                    DatePicker("Time", selection: $timestamp, in: ...Date.now)
                 } footer: {
                     validationFooter
                 }
 
                 Section {
-                    TextField("Notiz (optional)", text: $note, axis: .vertical)
+                    TextField("Note (optional)", text: $note, axis: .vertical)
                         .lineLimit(1...3)
                 } footer: {
-                    Text("z. B. „nach Paracetamol“ oder „linkes Ohr“")
+                    Text("e.g. “after paracetamol” or “left ear”")
                 }
             }
-            .navigationTitle(editing == nil ? "Temperatur erfassen" : "Temperatur bearbeiten")
+            .navigationTitle(editing == nil ? "Add temperature" : "Edit temperature")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Abbrechen") { dismiss() }
+                    Button("Cancel") { dismiss() }
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Sichern", action: save)
+                    Button("Save", action: save)
                         .disabled(!isValid)
                 }
             }
@@ -90,14 +90,14 @@ struct AddReadingView: View {
                     thresholds: selectedMember?.feverThresholds(on: timestamp) ?? .adult
                 )
                 if FeverLevel.needsDoctorWarning(celsius: value, ageInMonths: selectedMember?.ageInMonths(on: timestamp)) {
-                    Label("Fieber — bei Säuglingen unter 3 Monaten sofort ärztlich abklären.", systemImage: "exclamationmark.triangle.fill")
+                    Label("Fever — in infants under 3 months, seek medical advice immediately.", systemImage: "exclamationmark.triangle.fill")
                         .foregroundStyle(.red)
                 } else {
                     Label(level.label, systemImage: "thermometer.medium")
                         .foregroundStyle(level.color)
                 }
             } else {
-                Text("Bitte einen Wert zwischen 34,0 °C und 43,0 °C eingeben.")
+                Text("Please enter a value between \(TemperatureReading.plausibleRange.lowerBound.asTemperature) and \(TemperatureReading.plausibleRange.upperBound.asTemperature).")
                     .foregroundStyle(.red)
             }
         }

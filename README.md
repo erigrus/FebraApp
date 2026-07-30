@@ -1,6 +1,6 @@
 # Febra
 
-A local-only fever tracker for iOS (German UI).
+A local-only fever tracker for iOS, in English and German.
 
 Track body temperature for everyone in the household: enter a measurement by
 hand, see the history as a chart with age-dependent fever thresholds and a
@@ -34,8 +34,9 @@ No configuration, no keys, no packages to resolve.
 | `src/Febra/` | App sources (SwiftUI) |
 | `src/FebraTests/` | Unit tests (Swift Testing) |
 | `src/FebraUITests/` | UI tests (XCTest) |
+| `src/Febra/Localizable.xcstrings` | String catalog (English source, German translation) |
 | `src/CHANGELOG.md` | Technical changelog |
-| `src/USER_CHANGELOG.md` | User-facing "Was ist neu" (bundled into the app) |
+| `src/USER_CHANGELOG.md` | User-facing "What's new" (bundled; `.de.md` is the German one) |
 | `docs/` | Product spec |
 
 See [src/CONTRIBUTING.md](src/CONTRIBUTING.md) for the development workflow and

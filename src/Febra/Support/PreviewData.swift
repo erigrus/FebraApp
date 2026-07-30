@@ -45,7 +45,7 @@ extension FamilyStore {
                 name: "Paracetamol",
                 dosage: "250 mg",
                 timestamp: now.addingTimeInterval(-17 * 3600),
-                note: "Zäpfchen"
+                note: "suppository"
             ),
             MedicationDose(
                 memberID: emma.id,

@@ -23,17 +23,17 @@ struct MedicationCatalogView: View {
                     list
                 }
             }
-            .navigationTitle("Medikamentenliste")
+            .navigationTitle("Medications")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Fertig") { dismiss() }
+                    Button("Done") { dismiss() }
                 }
                 ToolbarItem(placement: .primaryAction) {
                     Button {
                         showsNewType = true
                     } label: {
-                        Label("Medikament hinzufügen", systemImage: "plus")
+                        Label("Add medication", systemImage: "plus")
                     }
                 }
             }
@@ -59,23 +59,23 @@ struct MedicationCatalogView: View {
                 }
                 .onDelete(perform: delete)
             } footer: {
-                Text("Der Mindestabstand ist ein einstellbarer Richtwert für die „nächste Gabe“ – keine ärztliche Dosierempfehlung.")
+                Text("The minimum interval is a reminder you set yourself for the “next dose” — not a medical dosing recommendation.")
             }
         }
     }
 
     private var emptyState: some View {
         ContentUnavailableView {
-            Label("Keine Medikamente", systemImage: "pills")
+            Label("No medications", systemImage: "pills")
         } description: {
-            Text("Lege häufig genutzte Medikamente mit ihrem Mindestabstand an. Beim Erfassen einer Gabe kannst du sie dann direkt auswählen.")
+            Text("Add the medications you use often, together with their minimum interval. You can then pick them directly when logging a dose.")
         } actions: {
-            Button("Medikament hinzufügen") {
+            Button("Add medication") {
                 showsNewType = true
             }
             .buttonStyle(.glassProminent)
 
-            Menu("Vorschlag übernehmen") {
+            Menu("Use a suggestion") {
                 ForEach(MedicationType.suggestions) { suggestion in
                     Button {
                         store.addMedicationType(MedicationType(
@@ -83,7 +83,7 @@ struct MedicationCatalogView: View {
                             intervalHours: suggestion.intervalHours
                         ))
                     } label: {
-                        Text("\(suggestion.name) · alle \(Int(suggestion.intervalHours ?? 0)) Std.")
+                        Text("\(suggestion.name) · \(MedicationType.intervalText(suggestion.intervalHours ?? 0))")
                     }
                 }
             }
@@ -126,9 +126,9 @@ struct MedicationTypeRow: View {
     private var subtitle: String? {
         var parts: [String] = []
         if let hours = type.intervalHours {
-            parts.append("alle \(Int(hours)) Std.")
+            parts.append(MedicationType.intervalText(hours))
         } else {
-            parts.append("kein Mindestabstand")
+            parts.append(String(localized: "no minimum interval"))
         }
         if let dosage = type.defaultDosage, !dosage.isEmpty {
             parts.append(dosage)
